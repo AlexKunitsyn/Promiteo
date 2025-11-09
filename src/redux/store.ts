@@ -1,15 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
 import exampleReducer from './slices/exampleSlice';
-import {persistStore} from "redux-persist";
 import { createWrapper } from 'next-redux-wrapper';
+import {setupListeners} from "@reduxjs/toolkit/query";
+import {
+    persistReducer,
+    persistStore,
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER,
+} from 'redux-persist';
 
-// const store = configureStore({
-//   reducer: {
-//     example: exampleReducer,
-//   },
-// });
 
-export const setUpStore = () => {
+export const setupStore = () => {
   const store = configureStore({
     reducer: {
       example: exampleReducer,
@@ -20,7 +25,7 @@ export const setUpStore = () => {
           serializableCheck: {
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
           },
-        }).concat([baseApi.middleware, rtkQueryErrorLogger]),
+        }),
   });
 
   setupListeners(store.dispatch);
@@ -28,12 +33,12 @@ export const setUpStore = () => {
   return store;
 };
 
-export const store = setUpStore();
+export const store = setupStore();
 export const persistor = persistStore(store);
 
-export type AppStore = ReturnType<typeof setUpStore>;
+export type AppStore = ReturnType<typeof setupStore>;
 
-export const wrapper = createWrapper<AppStore>(setUpStore, {
+export const wrapper = createWrapper<AppStore>(setupStore, {
     debug: false,
     serializeState: (state) => JSON.stringify(state),
     deserializeState: (state) => JSON.parse(state),
