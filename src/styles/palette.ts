@@ -3,7 +3,7 @@ export const dividerMainColor = '#DDDDDD';
 export const splitDivider = '#C2C2C2';
 
 const mainColor = '#FFFFFF';
-const blackMain = '#212121';
+const blackMain = '#1d1d20';
 const lightBlack = '#4A4D52';
 const secondaryDark = '#1A1B1D';
 const darkGrey = '#423B3B';
