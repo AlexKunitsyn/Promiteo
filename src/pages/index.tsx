@@ -1,12 +1,15 @@
 import React from "react";
 import {Box, styled, Typography} from '@mui/material';
 import ExampleComponent from '../components/ExampleComponent';
+import ProductBlock from '../components/ProductBlock';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import palette from '@styles/palette';
 import firstScreenImg from '../images/firstScreenImg.jpg'
+import logoImg from '../images/logo.svg'
+import LogoIcon from '../images/logo.svg'
 
 
 
@@ -58,11 +61,6 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
-const ProductBlock = styled(Box)(({ theme }) => ({
-    minHeight:'100vh'
-
-}));
-
 const Home = () => {
     const handleScroll = () => {
         const next = document.getElementById("next");
@@ -85,14 +83,16 @@ const Home = () => {
                     >
                         Welcome to My World...
                     </Typography>
+                    {/*<Image src={logoImg} alt="Logo"/>*/}
+                    <LogoIcon/>
                 </Box>
                 <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                     <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
                 </ScrollDown>
             </FirstScreen>
-            <ProductBlock className="second-screen" id="next">
+            <ProductBlock/>
 
-            </ProductBlock>
+
 
             <ExampleComponent />
         </MainContainer>

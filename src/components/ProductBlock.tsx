@@ -8,16 +8,17 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BrushIcon from '@mui/icons-material/Brush';
 import DiamondIcon from '@mui/icons-material/Diamond';
 
-const MainContainer = styled(Box)(({ theme }) => ({
+const ProductSection = styled(Box)(({ theme }) => ({
+    minHeight:'100vh'
 
 }));
 
-const BoxComponent = () => {
+const ProductBlock = () => {
     return (
-        <Box sx={{ textAlign: 'center', p: 4 }}>
+        <ProductSection sx={{ textAlign: 'center', p: 4 }} className="second-screen" id="next">
 
-        </Box>
+        </ProductSection>
     );
 }
 
-export default BoxComponent;
+export default ProductBlock;

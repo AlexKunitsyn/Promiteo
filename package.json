@@ -16,6 +16,7 @@
     "@mui/icons-material": "^5.15.0",
     "@mui/material": "^5.15.0",
     "@reduxjs/toolkit": "^2.2.0",
+    "@svgr/webpack": "^8.1.0",
     "axios": "^1.6.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.19",
