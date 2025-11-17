@@ -58,6 +58,11 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
+const ProductBlock = styled(Box)(({ theme }) => ({
+    minHeight:'100vh'
+
+}));
+
 const Home = () => {
     const handleScroll = () => {
         const next = document.getElementById("next");
@@ -85,9 +90,9 @@ const Home = () => {
                     <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
                 </ScrollDown>
             </FirstScreen>
-            <div className="second-screen" id="next">
-                {/* контент второго экрана */}
-            </div>
+            <ProductBlock className="second-screen" id="next">
+
+            </ProductBlock>
 
             <ExampleComponent />
         </MainContainer>

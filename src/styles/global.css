@@ -1,60 +1,146 @@
-body {
-    min-height: 100vh;
+/* ===============================
+   GLOBAL RESET (без CssBaseline)
+   =============================== */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-body * {
-    -webkit-box-sizing: border-box;
-    -khtml-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/*input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus textarea:-webkit-autofill, textarea:-webkit-autofill:hover*/
-/*textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {*/
-/*    background-color: transparent !important;*/
-/*    color: #555 !important;*/
-/*    -webkit-box-shadow: 0 0 0 30px transparent inset;*/
-/*    -webkit-text-fill-color: #555555 !important;*/
-/*}*/
+/* Smooth fonts */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-#root {
-    height: 100%;
-    min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-    width: 6px;
-    height: 0.4em;
+/* ===============================
+   TYPOGRAPHY / COLORS
+   =============================== */
+
+/* Твои переменные шрифтов от next/font/google */
+:root {
+    /* Эти переменные будут перезаписаны next/font,
+       но нужны, чтобы IDE не ругался */
+    --font-inter: 'Inter', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+
+    /* Цветовая палитра */
+    --color-bg: #0a0a0a;        /* глубокий черный */
+    --color-bg-soft: #111111;   /* для вторичных секций */
+    --color-gold: #F9CC3D;      /* золотой акцент */
+    --color-white: #ffffff;
+    --color-grey: #cccccc;
 }
 
-::-webkit-scrollbar-track {
-    width: 0.4em;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+/* ===============================
+   BODY
+   =============================== */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+
+    font-family: var(--font-inter);
+    font-size: 16px;
+    line-height: 1.6;
+
+    overflow-x: hidden;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #b5b5b5;
-    border-radius: 3px;
+/* ===============================
+   HEADINGS
+   =============================== */
+h1, h2, h3 {
+    font-family: var(--font-playfair);
+    color: var(--color-white);
+    font-weight: 700;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
 }
 
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+/* Золотой вариант заголовка */
+.heading-gold {
+    color: var(--color-gold);
+}
+
+/* ===============================
+   LINKS / TEXT
+   =============================== */
 a {
+    color: var(--color-gold);
     text-decoration: none;
-    color: inherit;
+    transition: 0.3s ease;
 }
 
+a:hover {
+    opacity: 0.8;
+}
 
+/* ===============================
+   DEFAULT SECTION STYLING
+   =============================== */
+section {
+    padding: 80px 0;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+button {
+    border: none;
+    background-color: var(--color-gold);
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ===============================
+   ANIMATIONS (light premium)
+   =============================== */
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ===============================
+   IMAGES
+   =============================== */
 img {
     max-width: 100%;
+    display: block;
 }

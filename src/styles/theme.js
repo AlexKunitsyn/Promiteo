@@ -7,7 +7,23 @@ const theme = createTheme({
     secondary: { main: '#f50057' },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: "var(--font-inter)",
+    h1: {
+      fontFamily: "var(--font-playfair)",
+      fontWeight: 700,
+    },
+    h2: {
+      fontFamily: "var(--font-playfair)",
+      fontWeight: 700,
+    },
+    h3: {
+      fontFamily: "var(--font-playfair)",
+      fontWeight: 700,
+    },
+    h4: {
+      fontFamily: "var(--font-playfair)",
+      fontWeight: 700,
+    },
   },
 });
 
