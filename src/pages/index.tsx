@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Box, styled, Typography} from '@mui/material';
 import ExampleComponent from '../components/ExampleComponent';
 import ProductBlock from '../components/ProductBlock';
@@ -22,6 +22,41 @@ const arrowFloat = keyframes`
 const arrowBlink = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
+`;
+
+const fadeUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+
+const drawLogo = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+const drawStroke = keyframes`
+  from {
+    stroke-dashoffset: 1500;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+`;
+
+//
+// ЭФФЕКТ ПОЯВЛЕНИЯ FILL
+//
+const fillLogo = keyframes`
+  from { fill: transparent; }
+  to   { fill: #F9CC3D; }
 `;
 
 const MainContainer = styled(Box)(({ theme }) => ({
@@ -48,10 +83,10 @@ const FirstScreenImage = styled(Image)(({ theme }) => ({
 
 const ScrollDown = styled('button')(({ theme }) => ({
     position: 'absolute',
-    bottom: '20px',
+    bottom: '12vh',
     left: '50%',
     transform: 'translateX(-50%)',
-    fontSize: '40px',
+    fontSize: '60px',
     background: 'transparent',
     border: 'none',
     cursor: 'pointer',
@@ -61,9 +96,56 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
+const HeroTitle  = styled('h2')(({ theme }) => ({
+    fontSize:'3.5rem',
+    color:'rgba(255,255,255, 0.7)',
+    margin:'0 0 20px',
+    margin: 0,
+    padding: 0,
+    fontWeight: 700,
+    opacity: 0,
+    animation: `${fadeUp} 1.6s ease-out forwards`,
+    animationDelay: "0.3s",
+
+}));
+
+
 const Welcome = styled(Box)(({ theme }) => ({
     height:'57vh',
     width:'100%',
+
+}));
+
+const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
+    width:'25vw',
+    color: '#F9CC3D',
+
+    // ЛОГОТИП НЕ ВИДЕН ДО СТАРТА АНИМАЦИИ
+    opacity: 0,
+
+    animation: "fadeInContainer 0s linear forwards",
+    animationDelay: "2s", // <- логотип становится видимым ровно когда начинается прорисовка
+
+    "@keyframes fadeInContainer": {
+        to: { opacity: 1 },
+    },
+
+    "& path": {
+        stroke: "#F9CC3D",
+        strokeWidth: 3,
+
+        fill: "transparent",          // скрываем заливку
+        strokeDasharray: 1500,
+        strokeDashoffset: 1500,       // скрываем stroke, но НЕ ломаем анимацию
+
+        animation: `
+      ${drawStroke} 4s ease forwards,
+      ${fillLogo} 1.4s ease forwards
+    `,
+        animationDelay: `
+      2s, 6s
+    `, // stroke: 2s–6s, fill: 6s+
+    },
 
 }));
 
@@ -72,6 +154,15 @@ const Home = () => {
         const next = document.getElementById("next");
         next?.scrollIntoView({ behavior: "smooth" });
     };
+
+    const [logoVisible, setLogoVisible] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setLogoVisible(true), 1800);
+    }, []);
+
+
+
   return (
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
@@ -80,18 +171,11 @@ const Home = () => {
                 <Welcome style={{
                     position:'relative'
                 }}>
-                    <Typography variant="h2"
-                        style={{
-                            // position:'relative',
-                            fontSize:'3.5rem',
-                            color:'rgba(255,255,255, 0.7)',
-                            margin:'0 0 20px'
-                        }}
-                    >
+                    <HeroTitle  variant="h2">
                         Welcome to My World...
-                    </Typography>
+                    </HeroTitle>
                     {/*<Image src={logoImg} alt="Logo"/>*/}
-                    <LogoIcon style={{ width:'25vw', color: '#F9CC3D' }}/>
+                    <AnimatedLogo className={logoVisible ? "active" : ""}/>
                 </Welcome>
                 <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                     <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
