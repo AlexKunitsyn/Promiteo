@@ -32,7 +32,7 @@ const FirstScreen = styled(Box)(({ theme }) => ({
     position:'relative',
     height:'100vh',
     display:'flex',
-    alignItems:'center',
+    alignItems:'flex-end',
     justifyContent:'center',
 }));
 
@@ -61,6 +61,12 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
+const Welcome = styled(Box)(({ theme }) => ({
+    height:'57vh',
+    width:'100%',
+
+}));
+
 const Home = () => {
     const handleScroll = () => {
         const next = document.getElementById("next");
@@ -71,7 +77,7 @@ const Home = () => {
         <MainContainer>
             <FirstScreen>
                 <FirstScreenImage src={firstScreenImg} alt="FirstScreenImg" style={{}} />
-                <Box style={{
+                <Welcome style={{
                     position:'relative'
                 }}>
                     <Typography variant="h2"
@@ -79,13 +85,14 @@ const Home = () => {
                             // position:'relative',
                             fontSize:'3.5rem',
                             color:'rgba(255,255,255, 0.7)',
+                            margin:'0 0 20px'
                         }}
                     >
                         Welcome to My World...
                     </Typography>
                     {/*<Image src={logoImg} alt="Logo"/>*/}
-                    <LogoIcon/>
-                </Box>
+                    <LogoIcon style={{ width:'25vw', color: '#F9CC3D' }}/>
+                </Welcome>
                 <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                     <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
                 </ScrollDown>
