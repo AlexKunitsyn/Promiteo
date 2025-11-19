@@ -130,6 +130,8 @@ const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
         to: { opacity: 1 },
     },
 
+
+
     "& path": {
         stroke: "#F9CC3D",
         strokeWidth: 3,
