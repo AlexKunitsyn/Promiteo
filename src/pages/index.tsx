@@ -100,7 +100,6 @@ const HeroTitle  = styled('h2')(({ theme }) => ({
     fontSize:'3.5rem',
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',
-    margin: 0,
     padding: 0,
     fontWeight: 700,
     opacity: 0,
