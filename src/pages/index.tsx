@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import palette from '@styles/palette';
+import palette from '../styles/palette';
 import firstScreenImg from '../images/firstScreenImg.jpg'
-import logoImg from '../images/logo.svg'
+// import logoImg from '../images/logo.svg'
 import LogoIcon from '../images/logo.svg'
 
 
@@ -100,7 +100,6 @@ const HeroTitle  = styled('h2')(({ theme }) => ({
     fontSize:'3.5rem',
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',
-    margin: 0,
     padding: 0,
     fontWeight: 700,
     opacity: 0,
@@ -173,7 +172,7 @@ const Home = () => {
                 <Welcome style={{
                     position:'relative'
                 }}>
-                    <HeroTitle  variant="h2">
+                    <HeroTitle>
                         Welcome to My World...
                     </HeroTitle>
                     {/*<Image src={logoImg} alt="Logo"/>*/}
