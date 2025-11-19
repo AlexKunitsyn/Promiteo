@@ -170,7 +170,7 @@ const Home = () => {
                 <Welcome style={{
                     position:'relative'
                 }}>
-                    <HeroTitle  variant="h2">
+                    <HeroTitle>
                         Welcome to My World...
                     </HeroTitle>
                     {/*<Image src={logoImg} alt="Logo"/>*/}
