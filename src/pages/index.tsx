@@ -96,7 +96,7 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
-const HeroTitle  = styled('h2')(({ theme }) => ({
+const HeroTitle  = styled('h1')(({ theme }) => ({
     fontSize:'3.5rem',
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',

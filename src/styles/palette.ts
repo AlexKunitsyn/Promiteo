@@ -2,6 +2,8 @@ export const status_color1 = '#32AD34';
 export const dividerMainColor = '#DDDDDD';
 export const splitDivider = '#C2C2C2';
 
+
+const mainTextColor = '#ffffffb3';
 const mainColor = '#FFFFFF';
 const blackMain = '#1d1d20';
 const lightBlack = '#4A4D52';
@@ -129,6 +131,7 @@ export const colorsAlert = {
 };
 
 export default {
+  mainTextColor,
   mainColor,
   secondaryRed,
   splitDivider,
