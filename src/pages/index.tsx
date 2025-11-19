@@ -6,9 +6,9 @@ import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import palette from '@styles/palette';
+import palette from '../styles/palette';
 import firstScreenImg from '../images/firstScreenImg.jpg'
-import logoImg from '../images/logo.svg'
+// import logoImg from '../images/logo.svg'
 import LogoIcon from '../images/logo.svg'
 
 
