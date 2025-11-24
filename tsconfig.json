@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "types/*": [
+        "types/*"
+      ],
+      "@icons/*": [
+        "icons/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@constants": [
+        "constants"
+      ],
+      "@i18n": [
+        "i18n"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@validation/*": [
+        "validation/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@images/*": [
+        "images/*"
+      ],
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}
