@@ -183,10 +183,6 @@ const Home = () => {
                 </ScrollDown>
             </FirstScreen>
             <ProductBlock/>
-
-
-
-            <ExampleComponent />
         </MainContainer>
     </Box>
   );

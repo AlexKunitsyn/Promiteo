@@ -12,8 +12,6 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BrushIcon from '@mui/icons-material/Brush';
 import DiamondIcon from '@mui/icons-material/Diamond';
-import StarIcon from '@mui/icons-material/StarIcon';
-
 
 import palette from '../styles/palette';
 
@@ -106,7 +104,8 @@ const ProductBlock = () => {
                             return (
                         <ListItem key={item.name+i}>
                             <Grid container alignItems="center">
-                                <Grid item xs={4} align="center">
+                                <Grid item xs={4}
+                                sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
                                     <IconWrapper>
                                         <Icon sx={{ fontSize: 40 }}/>
                                     </IconWrapper>

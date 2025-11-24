@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
                     {/*    LOGO*/}
                     {/*</Typography>*/}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -125,7 +125,7 @@ function ResponsiveAppBar() {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { xs: 'flex', md: 'none' },
                                 justifyContent:'center'
                             }}
                         >
@@ -155,7 +155,7 @@ function ResponsiveAppBar() {
                     >
                         LOGO
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'center' }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
