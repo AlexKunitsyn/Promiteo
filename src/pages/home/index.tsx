@@ -6,7 +6,7 @@ import {styled} from "@mui/material";
 import { Box, Button, Typography } from '@mui/material';
 // import { ReactComponent as FirstScreenImg } from '../../images/firstScreen.jpg';
 
-// import FirstScreenImg from '../../images/firstScreen.jpg'
+
 
 
 // const screenHeight = window.innerHeight;
