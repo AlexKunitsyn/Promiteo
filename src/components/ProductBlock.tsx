@@ -98,7 +98,7 @@ const ProductBlock = () => {
                         What Is Promiteo Box?
                     </Typography>
                     <List>
-                       
+
                         {aboutBoxList.map((item, i) => {
                             const Icon = item.icon;
                             return (
