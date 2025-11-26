@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Box, styled, Typography} from '@mui/material';
 import ExampleComponent from '../components/ExampleComponent';
 import ProductBlock from '../components/ProductBlock';
+import ProductsList from '../components/ProductsList';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -183,6 +184,7 @@ const Home = () => {
                 </ScrollDown>
             </FirstScreen>
             <ProductBlock/>
+            <ProductsList/>
         </MainContainer>
     </Box>
   );

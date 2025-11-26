@@ -57,6 +57,7 @@ const darkIcons = '#928585';
 const darkBorder = '#928585';
 const darkColor = '#928585';
 const selectedOptionBackground = '#B3A4A4';
+const gold = '#F9CC3D';
 
 const noImageManagerColor = '#DFDFE2';
 
@@ -207,6 +208,7 @@ export default {
   borderColorWarehouseList,
   newOrderStatus,
   consumptionColor,
+  gold,
   primary: {
     main: orange,
     light: mainColor,
