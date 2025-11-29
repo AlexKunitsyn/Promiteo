@@ -18,7 +18,7 @@ import ParallaxImage from '../components/ParallaxImage';
 
 const productList = [
     {
-        name:'Irem Name',
+        name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item1
     },
@@ -28,22 +28,22 @@ const productList = [
         image: item2
     },
     {
-        name:'Irem Name',
+        name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item3
     },
     {
-        name:'Irem Name',
+        name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item4
     },
     {
-        name:'Irem Name',
+        name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item1
     },
     {
-        name:'Irem Name',
+        name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item2
     },
