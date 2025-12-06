@@ -17,6 +17,7 @@ import palette from '../styles/palette';
 
 import boxImage from '../images/box_image.jpg'
 import MenuItem from "@mui/material/MenuItem";
+import Line from "@components/Line";
 
 
 
@@ -53,9 +54,9 @@ const aboutBoxList = [
 const ProductSection = styled(Box)(({ theme }) => ({
     minHeight:'100vh',
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
-    background:'#0e0e12',
+    // background:'#0e0e12',
     color:palette.mainTextColor,
-    padding:'10vh 0 0 0'
+    padding:'10vh 0 0 4vh'
 
 }));
 
@@ -83,12 +84,10 @@ const IconWrapper = styled("div")({
 
 const ProductBlock = () => {
     return (
+        <Box className="bg-block bg-noise bg-variant-purple">
         <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
             <Grid container >
                 <Grid item sm={6}
-                    style={{
-
-                    }}
                 >
                     <Typography component={'h2'}
                                 style={{
@@ -140,6 +139,8 @@ const ProductBlock = () => {
 
             </Grid>
         </ProductSection>
+            <Line/>
+            </Box>
     );
 }
 

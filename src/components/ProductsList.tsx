@@ -1,6 +1,7 @@
 import {Box, styled, Typography, Grid} from '@mui/material';
 import React from "react";
 import Image from 'next/image';
+import Container from '@mui/material/Container';
 
 import palette from '../styles/palette';
 
@@ -11,6 +12,7 @@ import item4 from '../images/4item.jpeg';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
+import Line from '../components/Line';
 
 
 
@@ -53,7 +55,7 @@ const productList = [
 
 const ProductsSection = styled(Box)(({ theme }) => ({
     minHeight:'100vh',
-    background:'#0e0e12',
+    // background:'#0e0e12',
     color:palette.mainTextColor,
     padding:'10vh 0 0 0'
 
@@ -67,8 +69,9 @@ const ProductImage = styled(Image)(({ theme }) => ({
 }));
 
 const ProductContainer = styled(Grid)(({ theme }) => ({
-    height:'70vh',
-    padding:"1vw",
+    // height:'70vh',
+    padding:"15px",
+
 }));
 const Content = styled(Box)(({ theme }) => ({
     position:'relative',
@@ -76,7 +79,7 @@ const Content = styled(Box)(({ theme }) => ({
     height:"100%",
     borderRadius: "10px",
     overflow:"hidden",
-    border:`1px solid ${palette.mainTextColor}`,
+    // border:`1px solid ${palette.mainTextColor}`,
 
     '& img': {
         width: '100%',
@@ -142,40 +145,68 @@ const Title = styled("div")(({ theme }) =>({
 
 const ProductBlock = () => {
     return (
-        <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="pro" id="next">
-            <Grid container >
-                <Typography component={'h2'}
-                            style={{
-                                fontSize:'3.5rem',
-                                color:palette.gold,
-                            }}>
-                    What Is inside?
-                </Typography>
-                <Grid container>
-                    {productList.map((item, i) => {
-                        return (
-                            <ProductContainer item xs={12} md={4} key={item.name+i}>
-                                <Content>
-                                    <ParallaxImage src={item.image}/>
-                                    {/*<ProductImage src={item.image} alt={'img'}/>*/}
-                                    <Title className={'productTitle'}>
-                                        <Typography component={'h4'}>
-                                            {item.name}
-                                        </Typography>
-                                        <Typography component={'p'}>
-                                            {item.description}
-                                        </Typography>
+        <Box
+            sx={{
+                width: "100%",
+                minHeight: "100vh",
+                background: `
+      radial-gradient(circle at 20% 60%, rgba(80, 0, 120, 0.25), transparent 60%),
+      radial-gradient(circle at 70% 80%, rgba(120, 70, 200, 0.15), transparent 60%),
+      #0d0d0d
+    `,
+                position: "relative",
+                overflow: "hidden",
+                "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage:
+                        "url('https://grainy-gradients.vercel.app/noise.svg')",
+                    opacity: 0.18,
+                    pointerEvents: "none",
+                },
+            }}
+        >
+            <Container maxWidth="xl">
+                <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="pro" id="next">
+                    <Grid container >
+                        <Typography component={'h2'}
+                                    style={{
+                                        textAlign: 'center',
+                                        fontSize:'3.5rem',
+                                        width:'100%',
+                                        padding:'0 0 20px',
+                                        // color:palette.gold,
+                                    }}>
+                            What Is inside?
+                        </Typography>
+                        <Grid container>
+                            {productList.map((item, i) => {
+                                return (
+                                    <ProductContainer item xs={12} md={4} key={item.name+i}>
+                                        <Content>
+                                            <ParallaxImage src={item.image}/>
+                                            {/*<ProductImage src={item.image} alt={'img'}/>*/}
+                                            <Title className={'productTitle'}>
+                                                <Typography component={'h4'}>
+                                                    {item.name}
+                                                </Typography>
+                                                <Typography component={'p'}>
+                                                    {item.description}
+                                                </Typography>
 
-                                    </Title>
-                                </Content>
+                                            </Title>
+                                        </Content>
 
-                            </ProductContainer>
-                        )})}
-                </Grid>
+                                    </ProductContainer>
+                                )})}
+                        </Grid>
 
 
-            </Grid>
-        </ProductsSection>
+                    </Grid>
+                </ProductsSection>
+            </Container>
+        </Box>
     );
 }
 

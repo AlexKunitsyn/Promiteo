@@ -179,3 +179,99 @@ img {
     max-width: 100%;
     display: block;
 }
+
+
+/* --- NOISE OVERLAY (общий) --- */
+.bg-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.17;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- COMMON NOISE + BASE --- */
+.bg-block {
+    position: relative;
+    overflow: hidden;
+    background: #0d0d0d;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.17;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- VARIANT 1: GOLD --- */
+.bg-variant-gold::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 70% 40%, rgba(255, 235, 180, 0.20), transparent 55%);
+    filter: blur(52px);
+    z-index: 0;
+}
+
+/* --- VARIANT 2: AMBER --- */
+.bg-variant-amber::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 40% 60%, rgba(255, 180, 80, 0.26), transparent 60%);
+    filter: blur(45px);
+    z-index: 0;
+}
+
+/* --- VARIANT 3: SOFT ORANGE --- */
+.bg-variant-orange::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 55% 50%, rgba(255, 140, 60, 0.23), transparent 60%);
+    filter: blur(48px);
+    z-index: 0;
+}
+
+/* --- VARIANT 4: PURPLE --- */
+.bg-variant-purple::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 50% 35%, rgba(140, 80, 255, 0.22), transparent 60%);
+    filter: blur(44px);
+    z-index: 0;
+}
+
+/* --- VARIANT 5: DEEP VIOLET --- */
+.bg-variant-violet::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 70% 70%, rgba(100, 50, 180, 0.26), transparent 65%);
+    filter: blur(47px);
+    z-index: 0;
+}
+
+/* --- VARIANT 6: COOL BLUE --- */
+.bg-variant-blue::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(70, 140, 255, 0.24), transparent 60%);
+    filter: blur(46px);
+    z-index: 0;
+}
