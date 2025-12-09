@@ -3,6 +3,8 @@ import {Box, styled, Typography} from '@mui/material';
 import ExampleComponent from '../components/ExampleComponent';
 import ProductBlock from '../components/ProductBlock';
 import ProductsList from '../components/ProductsList';
+import ForCustomerBlock from '@components/Advantages';
+import WhoNeedThis from '@components/WhoNeedThis';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -185,6 +187,10 @@ const Home = () => {
             </FirstScreen>
             <ProductBlock/>
             <ProductsList/>
+            <ForCustomerBlock/>
+            <WhoNeedThis/>
+
+
         </MainContainer>
     </Box>
   );

@@ -9,6 +9,9 @@ import item1 from '../images/1item.jpeg';
 import item2 from '../images/2item.jpeg';
 import item3 from '../images/3item.jpeg';
 import item4 from '../images/4item.jpeg';
+import img1 from '../images/img1.jpg';
+import img2 from '../images/img2.jpg';
+import img3 from '../images/img3.jpg';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
@@ -22,33 +25,33 @@ const productList = [
     {
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item1
+        image: img3
     },
     {
         name:'Irem Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item2
+        image: img2
     },
     {
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item3
+        image: img1
     },
-    {
-        name:'Item Name',
-        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item4
-    },
-    {
-        name:'Item Name',
-        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item1
-    },
-    {
-        name:'Item Name',
-        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item2
-    },
+    // {
+    //     name:'Item Name',
+    //     description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+    //     image: item4
+    // },
+    // {
+    //     name:'Item Name',
+    //     description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+    //     image: item1
+    // },
+    // {
+    //     name:'Item Name',
+    //     description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+    //     image: item2
+    // },
 ];
 
 
@@ -83,7 +86,7 @@ const Content = styled(Box)(({ theme }) => ({
 
     '& img': {
         width: '100%',
-        height: '100%',
+        height: '450px',
         objectFit: 'cover',
         transition: 'transform 0.4s ease',
     },
@@ -127,23 +130,27 @@ const productWrapper = styled("div")(({ theme }) =>({
 }));
 
 const Title = styled("div")(({ theme }) =>({
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
+    position: 'relative',
+    // bottom: 0,
+    //
+    textAlign:'left',
     width:"100%",
     background:"rgba(0, 0, 0, 0.7)",
-    padding: 10,
+    padding: '20px 15px',
     height:'150px',
     zIndex:1,
     fontSize:'20px',
     color:palette.mainTextColor,
-    opacity:0,
-    pointerEvents: 'none',
-    transition: 'opacity 0.4s ease',
+    opacity:1,
+    // pointerEvents: 'none',
+    // transition: 'opacity 0.4s ease',
+    '& h4':{
+        margin:'0 0 15px'
+    }
 
 }));
 
-const ProductBlock = () => {
+const WhoNeedThis = () => {
     return (
         <Box
             sx={{
@@ -168,9 +175,9 @@ const ProductBlock = () => {
             }}
         >
             <Container maxWidth="xl">
-                <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="pro" id="next">
+                <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex', flexDirection: 'column'}} className="pro" id="next">
                     <Grid container >
-                        <Typography component={'h2'}
+                        <p
                                     style={{
                                         textAlign: 'center',
                                         fontSize:'3.5rem',
@@ -179,16 +186,16 @@ const ProductBlock = () => {
                                         color:palette.mainTextColor,
                                         // color:palette.gold,
                                     }}>
-                            What Is inside?
-                        </Typography>
+                            Who is this product for?
+                        </p>
                         <Grid container>
                             {productList.map((item, i) => {
                                 return (
                                     <ProductContainer item xs={12} md={4} key={item.name+i}>
                                         <Content>
-                                            <ParallaxImage src={item.image}/>
+                                            <Image src={item.image} alt={'image'}/>
                                             {/*<ProductImage src={item.image} alt={'img'}/>*/}
-                                            <Title className={'productTitle'}>
+                                            <Title>
                                                 <Typography component={'h4'}>
                                                     {item.name}
                                                 </Typography>
@@ -212,4 +219,4 @@ const ProductBlock = () => {
     );
 }
 
-export default ProductBlock;
+export default WhoNeedThis;
