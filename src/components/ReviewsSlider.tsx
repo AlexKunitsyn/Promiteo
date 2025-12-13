@@ -11,6 +11,7 @@ import {
 import { styled } from '@mui/material/styles';
 import palette from "@styles/palette";
 import Container from "@mui/material/Container";
+import Line from "@components/Line";
 
 /* ---------------- styles ---------------- */
 
@@ -136,72 +137,74 @@ const ReviewsSlider =() => {
     };
 
     return (
-        <Section className="bg-block bg-noise bg-variant-purple" sx={{position:'relative', minHeight:'75vh' }}>
-            <Box
-                sx={{
-                    background: '#131024',
-                    padding: '120px 0',
-                    clipPath: 'polygon(0 100%, 100% 100%, 100% 60%, 0 0)',
-                    transform: 'scaleX(-1)',
-                    position:'absolute',
-                    bottom:0,
-                    width:'200%',
-                    height:'100%',
-                    zIndex: 0,
-                    opacity:'0.6'
-                }}
-            />
-            <Container maxWidth="xl">
-            {/* slick styles */}
-                <Typography component={'h2'}
-                            style={{
-                                fontSize:'3.5rem',
-                                color:palette.mainTextColor,
-                                padding:"0 0 40px"
-                            }}>
-                    What do people say about our product?
-                </Typography>
-
-
-                <link
-                    rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        <Box>
+            <Section className="bg-block bg-noise bg-variant-purple" sx={{position:'relative', minHeight:'75vh' }}>
+                <Box
+                    sx={{
+                        background: '#131024',
+                        padding: '120px 0',
+                        clipPath: 'polygon(0 100%, 100% 100%, 100% 60%, 0 0)',
+                        transform: 'scaleX(-1)',
+                        position:'absolute',
+                        bottom:0,
+                        width:'200%',
+                        height:'100%',
+                        zIndex: 0,
+                        opacity:'0.6'
+                    }}
                 />
-                <style>{slickCss}</style>
-
-                <Slider {...settings}>
-                    {REVIEWS.map((review, idx) => (
-                        <div key={idx}>
-                            <ReviewCard>
-                                <CardContent>
-                                    <Stack spacing={2}>
-                                        <Rating
-                                            value={review.rating}
-                                            readOnly
-                                            precision={0.5}
-                                            size="small"
-                                        />
-                                        <AuthorRow>
-                                            <Avatar />
-                                            <div>
-                                                <Name variant="subtitle2">{review.name}</Name>
-                                                <Role>{review.role}</Role>
-                                            </div>
-                                        </AuthorRow>
-
-                                        <Typography variant="body1">
-                                            “{review.text}”
-                                        </Typography>
+                <Container maxWidth="xl">
+                {/* slick styles */}
+                    <Typography component={'h2'}
+                                style={{
+                                    fontSize:'3.5rem',
+                                    color:palette.mainTextColor,
+                                    padding:"0 0 40px"
+                                }}>
+                        What do people say about our product?
+                    </Typography>
 
 
-                                    </Stack>
-                                </CardContent>
-                            </ReviewCard>
-                        </div>
-                    ))}
-                </Slider>
-            </Container>
-        </Section>
+                    <link
+                        rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+                    />
+                    <style>{slickCss}</style>
+
+                    <Slider {...settings}>
+                        {REVIEWS.map((review, idx) => (
+                            <div key={idx}>
+                                <ReviewCard>
+                                    <CardContent>
+                                        <Stack spacing={2}>
+                                            <Rating
+                                                value={review.rating}
+                                                readOnly
+                                                precision={0.5}
+                                                size="small"
+                                            />
+                                            <AuthorRow>
+                                                <Avatar />
+                                                <div>
+                                                    <Name variant="subtitle2">{review.name}</Name>
+                                                    <Role>{review.role}</Role>
+                                                </div>
+                                            </AuthorRow>
+
+                                            <Typography variant="body1">
+                                                “{review.text}”
+                                            </Typography>
+
+
+                                        </Stack>
+                                    </CardContent>
+                                </ReviewCard>
+                            </div>
+                        ))}
+                    </Slider>
+                </Container>
+            </Section>
+        </Box>
 
     );
 }

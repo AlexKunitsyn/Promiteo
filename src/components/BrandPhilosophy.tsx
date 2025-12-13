@@ -69,7 +69,7 @@ const BrandBackground = styled('div')(({ theme }) => ({
     position:'relative',
     width:'100%',
     height:'100%',
-    backgroundColor: '#111218',
+    // backgroundColor: '#111218',
 
 
     backgroundImage: `
@@ -153,6 +153,7 @@ const ProductBlock = () => {
 
                 </ProductSection>
             </BrandBackground>
+            <Line/>
         </Box>
     );
 }

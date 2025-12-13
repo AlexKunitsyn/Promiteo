@@ -4,8 +4,10 @@ import {
     Button,
     Typography,
     Stack,
+    Box
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Line from "@components/Line";
 
 /* ---------- styles ---------- */
 
@@ -104,63 +106,67 @@ const SubmitButton = styled(Button)({
 
  const ContactForm = () => {
     return (
-        <Section>
-            <FormWrapper>
-                <Stack spacing={3}>
-                    {/* Header */}
-                    <div>
-                        <Typography variant="h5" gutterBottom>
-                            Get in touch
-                        </Typography>
-                        <Typography variant="body2" sx={{ opacity: 0.7 }}>
-                            Leave your details and message — we’ll get back to you shortly.
-                        </Typography>
-                    </div>
+        <Box>
+            <Line/>
+            <Section>
 
-                    {/* First / Last name */}
-                    <Stack
-                        direction={{ xs: 'column', sm: 'row' }}
-                        spacing={2}
-                    >
+                <FormWrapper>
+                    <Stack spacing={3}>
+                        {/* Header */}
+                        <div>
+                            <Typography variant="h5" gutterBottom>
+                                Get in touch
+                            </Typography>
+                            <Typography variant="body2" sx={{ opacity: 0.7 }}>
+                                Leave your details and message — we’ll get back to you shortly.
+                            </Typography>
+                        </div>
+
+                        {/* First / Last name */}
+                        <Stack
+                            direction={{ xs: 'column', sm: 'row' }}
+                            spacing={2}
+                        >
+                            <StyledInput
+                                fullWidth
+                                label="First name"
+                            />
+                            <StyledInput
+                                fullWidth
+                                label="Last name"
+                            />
+                        </Stack>
+
+                        {/* Phone */}
                         <StyledInput
                             fullWidth
-                            label="First name"
+                            label="Phone"
+                            type="tel"
                         />
+
+                        {/* Email */}
                         <StyledInput
                             fullWidth
-                            label="Last name"
+                            label="Email"
+                            type="email"
                         />
+
+                        {/* Message */}
+                        <StyledInput
+                            fullWidth
+                            label="Message"
+                            multiline
+                            rows={4}
+                        />
+
+                        {/* Submit */}
+                        <SubmitButton fullWidth>
+                            Send message
+                        </SubmitButton>
                     </Stack>
-
-                    {/* Phone */}
-                    <StyledInput
-                        fullWidth
-                        label="Phone"
-                        type="tel"
-                    />
-
-                    {/* Email */}
-                    <StyledInput
-                        fullWidth
-                        label="Email"
-                        type="email"
-                    />
-
-                    {/* Message */}
-                    <StyledInput
-                        fullWidth
-                        label="Message"
-                        multiline
-                        rows={4}
-                    />
-
-                    {/* Submit */}
-                    <SubmitButton fullWidth>
-                        Send message
-                    </SubmitButton>
-                </Stack>
-            </FormWrapper>
-        </Section>
+                </FormWrapper>
+            </Section>
+        </Box>
     );
  }
 
