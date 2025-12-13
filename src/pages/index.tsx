@@ -8,6 +8,7 @@ import WhoNeedThis from '@components/WhoNeedThis';
 import BrandPhilosophy from '@components/BrandPhilosophy';
 import BrandSlider from '@components/BrandSlider';
 import ReviewsSlider from '@components/ReviewsSlider';
+import ContactForm from '@components/ContactForm';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -195,6 +196,7 @@ const Home = () => {
             <WhoNeedThis/>
             <BrandPhilosophy/>
             <ReviewsSlider/>
+            <ContactForm/>
 
 
         </MainContainer>
