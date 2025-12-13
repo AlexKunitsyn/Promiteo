@@ -6,6 +6,7 @@ import ProductsList from '../components/ProductsList';
 import ForCustomerBlock from '@components/Advantages';
 import WhoNeedThis from '@components/WhoNeedThis';
 import BrandPhilosophy from '@components/BrandPhilosophy';
+import BrandSlider from '@components/BrandSlider';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -188,6 +189,7 @@ const Home = () => {
             </FirstScreen>
             <ProductBlock/>
             <ProductsList/>
+            <BrandSlider/>
             <ForCustomerBlock/>
             <WhoNeedThis/>
             <BrandPhilosophy/>

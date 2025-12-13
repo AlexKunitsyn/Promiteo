@@ -15,8 +15,6 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 
 import palette from '../styles/palette';
 
-import boxImage from '../images/box_image.jpg'
-import MenuItem from "@mui/material/MenuItem";
 import Line from "@components/Line";
 
 import EmbossLogo from '@components/EmbosLogo';
@@ -135,13 +133,13 @@ const ProductBlock = () => {
                 <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
                     <Container maxWidth="xl">
                         <Box>
-                        <Typography component={'h2'}
-                                    style={{
-                                        fontSize:'3.5rem',
-                                        color:palette.mainTextColor,
-                                    }}>
-                            What Is Promiteo Box?
-                        </Typography>
+                            <Typography component={'h2'}
+                                        style={{
+                                            fontSize:'3.5rem',
+                                            color:palette.mainTextColor,
+                                        }}>
+                                What Is Promiteo Box?
+                            </Typography>
                         </Box>
                         <Typography component={'p'}
                                     style={{
@@ -155,7 +153,7 @@ const ProductBlock = () => {
 
                 </ProductSection>
             </BrandBackground>
-            </Box>
+        </Box>
     );
 }
 

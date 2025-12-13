@@ -147,6 +147,7 @@ const ProductBlock = () => {
     return (
         <Box
             sx={{
+                padding:'0 0 100px',
                 width: "100%",
                 minHeight: "100vh",
                 background: `
@@ -207,7 +208,7 @@ const ProductBlock = () => {
                     </Grid>
                 </ProductsSection>
             </Container>
-            <Line/>
+            {/*<Line/>*/}
         </Box>
     );
 }
