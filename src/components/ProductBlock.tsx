@@ -57,7 +57,7 @@ const ProductSection = styled(Box)(({ theme }) => ({
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
-    padding:'10vh 0 0 4vh'
+    padding:'10vh 0 0 0'
 
 }));
 

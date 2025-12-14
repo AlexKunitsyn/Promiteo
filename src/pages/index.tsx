@@ -86,7 +86,8 @@ const FirstScreenImage = styled(Image)(({ theme }) => ({
     width:'100%',
     height:'100%',
     filter: 'brightness(30%)',
-    zIndex:'0'
+    zIndex:'0',
+    objectFit:'cover'
 }));
 
 const ScrollDown = styled('button')(({ theme }) => ({

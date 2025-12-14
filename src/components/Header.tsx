@@ -73,33 +73,14 @@ function ResponsiveAppBar() {
     return (
         <StyledAppBar className={scrolled ? "scrolled" : ""}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
                    <SmallLogo
                        style={{
                        height: scrolled ? "35px":"50px",
                        padding: "0 15px 0 0",
                        transition: "all 0.35s ease",
                    }}/>
-                    {/*<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />*/}
-                    {/*<Typography*/}
-                    {/*    variant="h6"*/}
-                    {/*    noWrap*/}
-                    {/*    component="a"*/}
-                    {/*    href="#app-bar-with-responsive-menu"*/}
-                    {/*    sx={{*/}
-                    {/*        mr: 2,*/}
-                    {/*        display: { xs: 'none', md: 'flex' },*/}
-                    {/*        fontFamily: 'monospace',*/}
-                    {/*        fontWeight: 700,*/}
-                    {/*        letterSpacing: '.3rem',*/}
-                    {/*        color: 'inherit',*/}
-                    {/*        textDecoration: 'none',*/}
-                    {/*    }}*/}
-                    {/*>*/}
-                    {/*    LOGO*/}
-                    {/*</Typography>*/}
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+                    <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -136,25 +117,6 @@ function ResponsiveAppBar() {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'center' }}>
                         {pages.map((page) => (
                             <Button
