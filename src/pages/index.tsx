@@ -9,6 +9,7 @@ import BrandPhilosophy from '@components/BrandPhilosophy';
 import BrandSlider from '@components/BrandSlider';
 import ReviewsSlider from '@components/ReviewsSlider';
 import ContactForm from '@components/ContactForm';
+import Preloader from '@components/Preloader';
 import Image from 'next/image';
 import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -174,6 +175,7 @@ const Home = () => {
   return (
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
+            <Preloader/>
             <FirstScreen>
                 <FirstScreenImage src={firstScreenImg} alt="FirstScreenImg" style={{}} />
                 <Welcome style={{

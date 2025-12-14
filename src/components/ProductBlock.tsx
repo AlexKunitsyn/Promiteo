@@ -18,6 +18,7 @@ import palette from '../styles/palette';
 import boxImage from '../images/box_image.jpg'
 import MenuItem from "@mui/material/MenuItem";
 import Line from "@components/Line";
+import Container from "@mui/material/Container";
 
 
 
@@ -52,7 +53,7 @@ const aboutBoxList = [
 
 
 const ProductSection = styled(Box)(({ theme }) => ({
-    minHeight:'100vh',
+    // minHeight:'100vh',
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
@@ -85,60 +86,62 @@ const IconWrapper = styled("div")({
 const ProductBlock = () => {
     return (
         <Box className="bg-block bg-noise bg-variant-purple">
-        <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
-            <Grid container >
-                <Grid item sm={6}
-                >
-                    <Typography component={'h2'}
-                                style={{
-                                    fontSize:'3.5rem',
-                                    color:palette.mainTextColor,
-                                }}>
-                        What Is Promiteo Box?
-                    </Typography>
-                    <List>
+            {/*<Container maxWidth="xl">*/}
+                <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
+                    <Grid container >
+                        <Grid item sm={6}
+                        >
+                            <Typography component={'h2'}
+                                        style={{
+                                            fontSize:'3.5rem',
+                                            color:palette.mainTextColor,
+                                        }}>
+                                What Is Promiteo Box?
+                            </Typography>
+                            <List>
 
-                        {aboutBoxList.map((item, i) => {
-                            const Icon = item.icon;
-                            return (
-                        <ListItem key={item.name+i}>
-                            <Grid container alignItems="center">
-                                <Grid item xs={4}
-                                sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
-                                    <IconWrapper>
-                                        <Icon sx={{ fontSize: 40 }}/>
-                                    </IconWrapper>
-                                </Grid>
+                                {aboutBoxList.map((item, i) => {
+                                    const Icon = item.icon;
+                                    return (
+                                <ListItem key={item.name+i}>
+                                    <Grid container alignItems="center">
+                                        <Grid item xs={4}
+                                        sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
+                                            <IconWrapper>
+                                                <Icon sx={{ fontSize: 40 }}/>
+                                            </IconWrapper>
+                                        </Grid>
 
-                                <Grid item xs={8}>
-                                    <ListItemText
-                                        primary={item.name}
-                                        secondary={item.description}
-                                        primaryTypographyProps={{
-                                            fontSize: 30,
-                                            color: "white",
-                                        }}
-                                        secondaryTypographyProps={{
-                                            fontSize: 16,
-                                            color: "#dddddd",
-                                        }}
-                                    />
-                                </Grid>
-                            </Grid>
-                        </ListItem>
-                        )})}
+                                        <Grid item xs={8}>
+                                            <ListItemText
+                                                primary={item.name}
+                                                secondary={item.description}
+                                                primaryTypographyProps={{
+                                                    fontSize: 30,
+                                                    color: "white",
+                                                }}
+                                                secondaryTypographyProps={{
+                                                    fontSize: 16,
+                                                    color: "#dddddd",
+                                                }}
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                </ListItem>
+                                )})}
 
-                    </List>
-                </Grid>
-                <Grid item sm={6} style={{
-                    clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)",
+                            </List>
+                        </Grid>
+                        <Grid item sm={6} style={{
+                            clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)",
 
-                }}>
-                    <BoxImage src={boxImage} alt='boxImage'/>
-                </Grid>
+                        }}>
+                            <BoxImage src={boxImage} alt='boxImage'/>
+                        </Grid>
 
-            </Grid>
-        </ProductSection>
+                    </Grid>
+                </ProductSection>
+            {/*</Container>*/}
             <Line/>
             </Box>
     );

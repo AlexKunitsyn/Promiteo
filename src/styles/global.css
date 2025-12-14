@@ -198,7 +198,7 @@ img {
     overflow: hidden;
     background: #0d0d0d;
     width: 100%;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     /*padding: 10vh 0 0 0;*/
 }
 
