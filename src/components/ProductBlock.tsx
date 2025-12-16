@@ -64,24 +64,41 @@ const ProductSection = styled(Box)(({ theme }) => ({
 const BoxImage = styled(Image)(({ theme }) => ({
     width:'100%',
     height:'100%',
-    objectFit:'cover'
+    objectFit:'cover',
+    display:'none',
+    [theme.breakpoints.up('md')]: {
+        display:'block'
+    },
 
 }));
-const Content = styled(Box)(({ theme }) => ({
+const Title = styled('h2')(({ theme }) => ({
+    fontSize:'38px',
+    color:palette.mainTextColor,
 
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
 }));
 
-const IconWrapper = styled("div")({
-    width: 80,
-    height: 80,
+const IconWrapper = styled("div")(({ theme }) => ({
+    position:'relative',
+    width: 55,
+    height: 55,
     borderRadius: "50%",
     border: "2px solid #F9CC3D", // Золотой
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     color: "#F9CC3D",
-    fontSize: 40,
-});
+    fontSize: 30,
+
+
+    [theme.breakpoints.up('md')]: {
+        fontSize: '40px',
+        width: 80,
+        height: 80,
+    },
+}));
 
 const ProductBlock = () => {
     return (
@@ -91,13 +108,9 @@ const ProductBlock = () => {
                     <Grid container >
                         <Grid item sm={6}
                         >
-                            <Typography component={'h2'}
-                                        style={{
-                                            fontSize:'3.5rem',
-                                            color:palette.mainTextColor,
-                                        }}>
+                            <Title>
                                 What Is Promiteo Box?
-                            </Typography>
+                            </Title>
                             <List>
 
                                 {aboutBoxList.map((item, i) => {
@@ -105,14 +118,20 @@ const ProductBlock = () => {
                                     return (
                                 <ListItem key={item.name+i}>
                                     <Grid container alignItems="center">
-                                        <Grid item xs={4}
-                                        sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
+                                        <Grid item xs={2} md={4}
+                                        sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>
                                             <IconWrapper>
-                                                <Icon sx={{ fontSize: 40 }}/>
+                                                <Icon sx={(theme) => ({
+                                                    fontSize: '30px',
+
+                                                    [theme.breakpoints.up('md')]: {
+                                                        fontSize: '40px',
+                                                    },
+                                                })}/>
                                             </IconWrapper>
                                         </Grid>
 
-                                        <Grid item xs={8}>
+                                        <Grid item xs={10} md={8}>
                                             <ListItemText
                                                 primary={item.name}
                                                 secondary={item.description}
@@ -133,9 +152,7 @@ const ProductBlock = () => {
                             </List>
                         </Grid>
                         <Grid item sm={6} style={{
-                            clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)",
-
-                        }}>
+                            clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)"}}>
                             <BoxImage src={boxImage} alt='boxImage'/>
                         </Grid>
 

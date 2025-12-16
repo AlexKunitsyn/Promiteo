@@ -106,7 +106,7 @@ const ScrollDown = styled('button')(({ theme }) => ({
 }));
 
 const HeroTitle  = styled('h1')(({ theme }) => ({
-    fontSize:'3.5rem',
+    fontSize:'34px',
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',
     padding: 0,
@@ -114,6 +114,10 @@ const HeroTitle  = styled('h1')(({ theme }) => ({
     opacity: 0,
     animation: `${fadeUp} 1.6s ease-out forwards`,
     animationDelay: "0.3s",
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
 
 }));
 
