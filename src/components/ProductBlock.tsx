@@ -18,8 +18,7 @@ import palette from '../styles/palette';
 import boxImage from '../images/box_image.jpg'
 import MenuItem from "@mui/material/MenuItem";
 import Line from "@components/Line";
-import Container from "@mui/material/Container";
-
+import { useTranslation } from "../i18n/useTranslation";
 
 
 const aboutBoxList = [
@@ -104,6 +103,10 @@ const IconWrapper = styled("div")(({ theme }) => ({
 }));
 
 const ProductBlock = () => {
+    const { t, i18n } = useTranslation();
+    const aboutList = t("aboutList");
+
+    console.log(t("aboutList"),'t("aboutList")')
     return (
         <Box className="bg-block bg-noise bg-variant-purple">
             {/*<Container maxWidth="xl">*/}
@@ -114,7 +117,15 @@ const ProductBlock = () => {
                             <Title>
                                 What Is Promiteo Box?
                             </Title>
+                            <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+                            <button onClick={() => i18n.changeLanguage("es")}>ES</button>
                             <List>
+                                {Array.isArray(aboutList) &&aboutList.map((item, i) => (
+                                    <div key={i}>
+                                        <h3>{item.name}</h3>
+                                        <p>{item.description}</p>
+                                    </div>
+                                ))}
 
                                 {aboutBoxList.map((item, i) => {
                                     const Icon = item.icon;

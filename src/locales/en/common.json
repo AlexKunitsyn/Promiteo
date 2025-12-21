@@ -1,30 +1,16 @@
 {
-    'aboutBoxList'
-    = [
+  "aboutList": [
     {
-      'name': 'Заголовок пункта',
-      'description'": 'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-
+    "name": "Item title",
+    "description": "Description of the item..."
     },
     {
-      'name': 'Заголовок пункта',
-      'description'": 'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-
+    "name": "Quality guarantee",
+    "description": "We inspect every product..."
     },
     {
-      'name': 'Заголовок пункта',
-      'description'": 'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-
-    },
-    {
-      'name': 'Заголовок пункта',
-      'description'": 'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-
-    },
-    {
-      'name': 'Заголовок пункта',
-      'description'": 'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-
+    "name": "Fast delivery",
+    "description": "We ship worldwide..."
     }
   ]
 }

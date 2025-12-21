@@ -6,6 +6,7 @@ import theme from '../styles/theme';
 import '../styles/global.css';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Header from './../components/Header'
+import { LanguageProvider } from "../i18n/LanguageProvider";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -22,13 +23,15 @@ const inter = Inter({
 export default function MyApp({ Component, pageProps }) {
     return (
         <Provider store={store}>
-            <ThemeProvider theme={theme}>
-                <Header/>
-                {/*<CssBaseline />*/}
-                <main className={`${playfair.variable} ${inter.variable}`}>
-                    <Component {...pageProps} />
-                </main>
-            </ThemeProvider>
+            <LanguageProvider>
+                <ThemeProvider theme={theme}>
+                    {/*<CssBaseline />*/}
+                    <main className={`${playfair.variable} ${inter.variable}`}>
+                        <Header/>
+                        <Component {...pageProps} />
+                    </main>
+                </ThemeProvider>
+            </LanguageProvider>
         </Provider>
     );
 }
