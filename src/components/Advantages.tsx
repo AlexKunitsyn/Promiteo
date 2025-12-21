@@ -76,17 +76,36 @@ const Content = styled(Box)(({ theme }) => ({
 
 }));
 
-const IconWrapper = styled("div")({
-    width: 80,
-    height: 80,
+const IconWrapper = styled("div")(({ theme }) => ({
+    position:'relative',
+    width: 55,
+    height: 55,
     borderRadius: "50%",
     border: "2px solid #F9CC3D", // Золотой
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     color: "#F9CC3D",
-    fontSize: 40,
-});
+    fontSize: 30,
+
+
+    [theme.breakpoints.up('md')]: {
+        fontSize: '40px',
+        width: 80,
+        height: 80,
+    },
+}));
+
+const Title = styled('h2')(({ theme }) => ({
+    width:'100%',
+    textAlign:'center',
+    fontSize:'38px',
+    color:palette.mainTextColor,
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
+}));
 
 const ForCustomerBlock = () => {
     return (
@@ -108,28 +127,23 @@ const ForCustomerBlock = () => {
                     <Grid container >
                         <Grid item sm={12}
                         >
-                            <Typography component={'h2'}
-                                        style={{
-                                            fontSize:'3.5rem',
-                                            color:palette.mainTextColor,
-                                            padding:"0 0 5vh"
-                                        }}>
+                            <Title>
                                 Advantages
-                            </Typography>
+                            </Title>
                             <Grid container>
 
                                 {aboutBoxList.map((item, i) => {
                                     const Icon = item.icon;
                                     return (
                                         <Grid container item sm={12} md={4} alignItems="center">
-                                            <Grid item xs={4}
+                                            <Grid item xs={2} md={4}
                                                   sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
                                                 <IconWrapper>
                                                     <Icon sx={{ fontSize: 40 }}/>
                                                 </IconWrapper>
                                             </Grid>
 
-                                            <Grid item xs={8} sx={{padding:'30px 10px'}}>
+                                            <Grid item xs={10} md={8} sx={{padding:'10px'}}>
                                                 <ListItemText
                                                     primary={item.name}
                                                     secondary={item.description}

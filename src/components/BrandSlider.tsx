@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import {Box, styled, Typography, Grid} from '@mui/material';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -23,6 +24,7 @@ const Slide = styled('div')(({ theme }) => ({
     justifyContent:'center',
     padding:'20px 40px',
     '& svg':{
+        minWidth:'200px',
         width:'100%',
         height:'100px',
         objectFit:'contain',
@@ -37,8 +39,37 @@ const SliderContainer = styled(Box)(({ theme }) => ({
 
 
 const BrandSlider = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(()=>{
+        const checkScreen =() => {
+            setIsMobile(window.innerWidth < 768)
+        }
+
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+        return () => window.removeEventListener("resize", checkScreen);
+    },[]);
+
+
+    console.log(isMobile,'isMobile');
+    // console.log(window.innerWidth < 768,'window.innerWidth < 768');
+    // console.log(window.innerWidth,'window.innerWidth');
 
     const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        waitForAnimate: false,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
+        arrows: false,
+    };
+
+    const settings2 = {
         dots: false,
         infinite: true,
         speed: 500,
@@ -49,14 +80,15 @@ const BrandSlider = () => {
         autoplaySpeed: 3000,
         cssEase: "linear",
         arrows: false,
-        adaptiveHeight: true
     };
+
+    const sliderSettings = isMobile ? settings : settings2;
 
     return (
         <SliderContainer>
             <Line/>
             <div className="slider-container">
-                <Slider {...settings}>
+                <Slider {...sliderSettings}>
                     <Slide>
                         <Aurelia/>
                     </Slide>

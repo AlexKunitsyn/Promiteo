@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Slider from 'react-slick';
 import {
     Card,
@@ -118,23 +118,56 @@ const REVIEWS = [
 /* ---------------- component ---------------- */
 
 const ReviewsSlider =() => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(()=>{
+        const checkScreen =() => {
+            setIsMobile(window.innerWidth < 768)
+        }
+
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+        return () => window.removeEventListener("resize", checkScreen);
+    },[]);
+
     const settings = {
-        arrows: false,
-        dots: true,
+        dots: false,
         infinite: true,
-        speed: 700,
-        slidesToShow:3,
+        speed: 500,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 900,
-                settings: { slidesToShow: 1 },
-            },
-        ],
+        waitForAnimate: false,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
+        arrows: false,
     };
+
+    const settings2 = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        waitForAnimate: false,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
+        arrows: false,
+    };
+
+    const sliderSettings = isMobile ? settings : settings2;
+    const Title = styled('h2')(({ theme }) => ({
+        width:'100%',
+        textAlign:'center',
+        fontSize:'38px',
+        color:palette.mainTextColor,
+        margin:'0 0 30px',
+
+        [theme.breakpoints.up('md')]: {
+            fontSize:'3.5rem',
+        },
+    }));
 
     return (
         <Box>
@@ -155,14 +188,9 @@ const ReviewsSlider =() => {
                 />
                 <Container maxWidth="xl">
                 {/* slick styles */}
-                    <Typography component={'h2'}
-                                style={{
-                                    fontSize:'3.5rem',
-                                    color:palette.mainTextColor,
-                                    padding:"0 0 40px"
-                                }}>
+                    <Title>
                         What do people say about our product?
-                    </Typography>
+                    </Title>
 
 
                     <link
@@ -171,7 +199,7 @@ const ReviewsSlider =() => {
                     />
                     <style>{slickCss}</style>
 
-                    <Slider {...settings}>
+                    <Slider {...sliderSettings}>
                         {REVIEWS.map((review, idx) => (
                             <div key={idx}>
                                 <ReviewCard>

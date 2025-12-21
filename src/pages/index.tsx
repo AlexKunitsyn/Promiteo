@@ -129,7 +129,7 @@ const Welcome = styled(Box)(({ theme }) => ({
 }));
 
 const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
-    width:'25vw',
+    width:'90vw',
     color: '#F9CC3D',
 
     // ЛОГОТИП НЕ ВИДЕН ДО СТАРТА АНИМАЦИИ
@@ -159,6 +159,10 @@ const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
         animationDelay: `
       2s, 6s
     `, // stroke: 2s–6s, fill: 6s+
+    },
+
+    [theme.breakpoints.up('md')]: {
+        width:'25vw',
     },
 
 }));

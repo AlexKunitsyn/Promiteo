@@ -117,19 +117,8 @@ const Content = styled(Box)(({ theme }) => ({
 
 }));
 
-const productWrapper = styled("div")(({ theme }) =>({
-    // width: 80,
-    // height: 80,
-    // borderRadius: "50%",
-    border: "2px solid #F9CC3D", // Золотой
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: palette.gold,
-    fontSize: 40,
-}));
 
-const Title = styled("div")(({ theme }) =>({
+const ProductTitle = styled("div")(({ theme }) =>({
     position: 'relative',
     // bottom: 0,
     //
@@ -137,7 +126,7 @@ const Title = styled("div")(({ theme }) =>({
     width:"100%",
     background:"rgba(0, 0, 0, 0.7)",
     padding: '20px 15px',
-    height:'150px',
+    minHeight:'150px',
     zIndex:1,
     fontSize:'20px',
     color:palette.mainTextColor,
@@ -148,6 +137,18 @@ const Title = styled("div")(({ theme }) =>({
         margin:'0 0 15px'
     }
 
+}));
+
+
+const Title = styled('h2')(({ theme }) => ({
+    width:'100%',
+    textAlign:'center',
+    fontSize:'38px',
+    color:palette.mainTextColor,
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
 }));
 
 const WhoNeedThis = () => {
@@ -177,17 +178,9 @@ const WhoNeedThis = () => {
             <Container maxWidth="xl">
                 <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex', flexDirection: 'column'}} className="pro" id="next">
                     <Grid container >
-                        <p
-                                    style={{
-                                        textAlign: 'center',
-                                        fontSize:'3.5rem',
-                                        width:'100%',
-                                        padding:'0 0 20px',
-                                        color:palette.mainTextColor,
-                                        // color:palette.gold,
-                                    }}>
+                        <Title>
                             Who is this product for?
-                        </p>
+                        </Title>
                         <Grid container>
                             {productList.map((item, i) => {
                                 return (
@@ -195,7 +188,7 @@ const WhoNeedThis = () => {
                                         <Content>
                                             <Image src={item.image} alt={'image'}/>
                                             {/*<ProductImage src={item.image} alt={'img'}/>*/}
-                                            <Title>
+                                            <ProductTitle>
                                                 <Typography component={'h4'}>
                                                     {item.name}
                                                 </Typography>
@@ -203,7 +196,7 @@ const WhoNeedThis = () => {
                                                     {item.description}
                                                 </Typography>
 
-                                            </Title>
+                                            </ProductTitle>
                                         </Content>
 
                                     </ProductContainer>

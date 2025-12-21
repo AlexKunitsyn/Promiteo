@@ -97,32 +97,21 @@ const ProductSection = styled(Box)(({ theme }) => ({
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
-    padding:'10vh 0 0 4vh',
+    padding:'10vh 0 0',
     zIndex:1
 
 }));
 
-const BoxImage = styled(Image)(({ theme }) => ({
+const Title = styled('h2')(({ theme }) => ({
     width:'100%',
-    height:'100%',
-    objectFit:'cover'
+    textAlign:'center',
+    fontSize:'38px',
+    color:palette.mainTextColor,
 
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
 }));
-const Content = styled(Box)(({ theme }) => ({
-
-}));
-
-const IconWrapper = styled("div")({
-    width: 80,
-    height: 80,
-    borderRadius: "50%",
-    border: "2px solid #F9CC3D", // Золотой
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: "#F9CC3D",
-    fontSize: 40,
-});
 
 const ProductBlock = () => {
     return (
@@ -133,13 +122,9 @@ const ProductBlock = () => {
                 <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
                     <Container maxWidth="xl">
                         <Box>
-                            <Typography component={'h2'}
-                                        style={{
-                                            fontSize:'3.5rem',
-                                            color:palette.mainTextColor,
-                                        }}>
-                                What Is Promiteo Box?
-                            </Typography>
+                            <Title>
+                                What Is Promiteo?
+                            </Title>
                         </Box>
                         <Typography component={'p'}
                                     style={{

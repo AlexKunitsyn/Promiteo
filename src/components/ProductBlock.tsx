@@ -71,7 +71,10 @@ const BoxImage = styled(Image)(({ theme }) => ({
     },
 
 }));
+
 const Title = styled('h2')(({ theme }) => ({
+    width:'100%',
+    textAlign:'center',
     fontSize:'38px',
     color:palette.mainTextColor,
 

@@ -61,13 +61,6 @@ const ProductsSection = styled(Box)(({ theme }) => ({
 
 }));
 
-const ProductImage = styled(Image)(({ theme }) => ({
-    width:'100%',
-    height:'100%',
-    objectFit:'cover'
-
-}));
-
 const ProductContainer = styled(Grid)(({ theme }) => ({
     // height:'70vh',
     padding:"15px",
@@ -114,19 +107,7 @@ const Content = styled(Box)(({ theme }) => ({
 
 }));
 
-const productWrapper = styled("div")(({ theme }) =>({
-    // width: 80,
-    // height: 80,
-    // borderRadius: "50%",
-    border: "2px solid #F9CC3D", // Золотой
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    color: palette.gold,
-    fontSize: 40,
-}));
-
-const Title = styled("div")(({ theme }) =>({
+const ProductTitle = styled("div")(({ theme }) =>({
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -142,6 +123,18 @@ const Title = styled("div")(({ theme }) =>({
     transition: 'opacity 0.4s ease',
 
 }));
+
+const Title = styled('h2')(({ theme }) => ({
+    width:'100%',
+    textAlign:'center',
+    fontSize:'38px',
+    color:palette.mainTextColor,
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
+}));
+
 
 const ProductBlock = () => {
     return (
@@ -171,17 +164,9 @@ const ProductBlock = () => {
             <Container maxWidth="xl">
                 <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="pro" id="next">
                     <Grid container >
-                        <Typography component={'h2'}
-                                    style={{
-                                        textAlign: 'center',
-                                        fontSize:'3.5rem',
-                                        width:'100%',
-                                        padding:'0 0 20px',
-                                        color:palette.mainTextColor,
-                                        // color:palette.gold,
-                                    }}>
+                        <Title>
                             What Is inside?
-                        </Typography>
+                        </Title>
                         <Grid container>
                             {productList.map((item, i) => {
                                 return (
@@ -189,7 +174,7 @@ const ProductBlock = () => {
                                         <Content>
                                             <ParallaxImage src={item.image}/>
                                             {/*<ProductImage src={item.image} alt={'img'}/>*/}
-                                            <Title className={'productTitle'}>
+                                            <ProductTitle className={'productTitle'}>
                                                 <Typography component={'h4'}>
                                                     {item.name}
                                                 </Typography>
@@ -197,7 +182,7 @@ const ProductBlock = () => {
                                                     {item.description}
                                                 </Typography>
 
-                                            </Title>
+                                            </ProductTitle>
                                         </Content>
 
                                     </ProductContainer>
