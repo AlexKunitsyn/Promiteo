@@ -135,7 +135,7 @@ const ForCustomerBlock = () => {
                                 {aboutBoxList.map((item, i) => {
                                     const Icon = item.icon;
                                     return (
-                                        <Grid container item sm={12} md={4} alignItems="center">
+                                        <Grid key={item.name+i} container item sm={12} md={4} alignItems="center">
                                             <Grid item xs={2} md={4}
                                                   sx={{display: "flex", alignItems:"center", justifyContent:"center"}}>
                                                 <IconWrapper>
