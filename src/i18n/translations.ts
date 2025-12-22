@@ -7,15 +7,26 @@ export const supportedLanguages = ["en", "es"] as const;
 
 export type Language = typeof supportedLanguages[number];
 
-export const translations: Record<Language, Record<string, string>> = {
+/**
+ * Тип для JSON-переводов
+ * может быть строка, массив или объект
+ */
+export type TranslationValue =
+    | string
+    | number
+    | boolean
+    | TranslationValue[]
+    | { [key: string]: TranslationValue };
+
+export type TranslationTree = {
+    [key: string]: TranslationValue;
+};
+
+export const translations: Record<Language, TranslationTree> = {
     en,
     es,
 };
 
-/**
- * Type guard for language
- * Проверяет, что строка — поддерживаемый язык
- */
 export const isLanguage = (value: string): value is Language => {
     return supportedLanguages.includes(value as Language);
 };

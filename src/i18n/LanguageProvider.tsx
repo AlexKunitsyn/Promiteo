@@ -4,6 +4,7 @@ import {
     DEFAULT_LANGUAGE,
     type Language,
     isLanguage,
+    TranslationTree
 } from "./translations";
 
 type LanguageContextType = {
@@ -12,7 +13,9 @@ type LanguageContextType = {
         language: Language;
         changeLanguage: (lang: Language) => void;
     };
+    translations: TranslationTree;
 };
+
 
 export const LanguageContext = createContext<LanguageContextType | null>(null);
 
@@ -70,10 +73,8 @@ export const LanguageProvider = ({
         <LanguageContext.Provider
             value={{
                 t,
-                i18n: {
-                    language,
-                    changeLanguage,
-                },
+                i18n: { language, changeLanguage },
+                translations: translations[language],
             }}
         >
             {children}

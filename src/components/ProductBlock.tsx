@@ -19,6 +19,8 @@ import boxImage from '../images/box_image.jpg'
 import MenuItem from "@mui/material/MenuItem";
 import Line from "@components/Line";
 import { useTranslation } from "../i18n/useTranslation";
+import { useContext } from "react";
+import { LanguageContext } from "../i18n/LanguageProvider";
 
 
 // const aboutBoxList = [
@@ -104,7 +106,10 @@ const IconWrapper = styled("div")(({ theme }) => ({
 
 const ProductBlock = () => {
     const { t, i18n } = useTranslation();
-    const aboutBoxList = t("aboutBoxList");
+    const ctx = useContext(LanguageContext);
+    if (!ctx) return null;
+
+    const aboutBoxList = ctx.translations.aboutBoxList;
 
     const aboutIcons = [
         CardGiftcardIcon,VerifiedIcon,LocalShippingIcon,BrushIcon,DiamondIcon
