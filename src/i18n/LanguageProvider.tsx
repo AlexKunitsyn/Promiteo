@@ -1,45 +1,81 @@
 import { createContext, useEffect, useState } from "react";
-import { translations, DEFAULT_LANGUAGE, supportedLanguages } from "./translations";
+import {
+    translations,
+    DEFAULT_LANGUAGE,
+    type Language,
+    isLanguage,
+} from "./translations";
 
 type LanguageContextType = {
-    t: (key: string) => any;
+    t: (key: string) => string;
     i18n: {
-        language: string;
-        changeLanguage: (lang: string) => void;
+        language: Language;
+        changeLanguage: (lang: Language) => void;
     };
 };
 
 export const LanguageContext = createContext<LanguageContextType | null>(null);
 
-const detectLanguage = () => {
+/**
+ * Detect initial language (SSR-safe)
+ */
+const detectLanguage = (): Language => {
     if (typeof window === "undefined") return DEFAULT_LANGUAGE;
 
     const saved = localStorage.getItem("lang");
-    if (saved && supportedLanguages.includes(saved)) return saved;
+    if (saved && isLanguage(saved)) return saved;
 
     const browser = navigator.language.split("-")[0];
-    if (supportedLanguages.includes(browser)) return browser;
+    if (isLanguage(browser)) return browser;
 
     return DEFAULT_LANGUAGE;
 };
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-    const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
+export const LanguageProvider = ({
+                                     children,
+                                 }: {
+    children: React.ReactNode;
+}) => {
+    const [language, setLanguage] = useState<Language>(DEFAULT_LANGUAGE);
 
     useEffect(() => {
         setLanguage(detectLanguage());
     }, []);
 
-    const t = (key: string) =>
-        key.split(".").reduce((acc: any, part) => acc?.[part], translations[language]) ?? key;
+    /**
+     * Translation function
+     */
+    const t = (key: string): string => {
+        return (
+            key
+                .split(".")
+                .reduce(
+                    (acc: any, part) => acc?.[part],
+                    translations[language]
+                ) ?? key
+        );
+    };
 
-    const changeLanguage = (lang: string) => {
+    /**
+     * Change language safely
+     */
+    const changeLanguage = (lang: Language) => {
         setLanguage(lang);
-        localStorage.setItem("lang", lang);
+        if (typeof window !== "undefined") {
+            localStorage.setItem("lang", lang);
+        }
     };
 
     return (
-        <LanguageContext.Provider value={{ t, i18n: { language, changeLanguage } }}>
+        <LanguageContext.Provider
+            value={{
+                t,
+                i18n: {
+                    language,
+                    changeLanguage,
+                },
+            }}
+        >
             {children}
         </LanguageContext.Provider>
     );

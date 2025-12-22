@@ -11,3 +11,11 @@ export const translations: Record<Language, Record<string, string>> = {
     en,
     es,
 };
+
+/**
+ * Type guard for language
+ * Проверяет, что строка — поддерживаемый язык
+ */
+export const isLanguage = (value: string): value is Language => {
+    return supportedLanguages.includes(value as Language);
+};
