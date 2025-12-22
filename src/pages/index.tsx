@@ -18,6 +18,7 @@ import palette from '../styles/palette';
 import firstScreenImg from '../images/firstScreenImg.jpg'
 // import logoImg from '../images/logo.svg'
 import LogoIcon from '../images/logo.svg'
+import {useTranslation} from "../i18n/useTranslation";
 
 
 
@@ -168,6 +169,7 @@ const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
 }));
 
 const Home = () => {
+    const { t, i18n } = useTranslation();
     const handleScroll = () => {
         const next = document.getElementById("next");
         next?.scrollIntoView({ behavior: "smooth" });
@@ -191,7 +193,7 @@ const Home = () => {
                     position:'relative'
                 }}>
                     <HeroTitle>
-                        Welcome to My World...
+                        {t("WelcomeToMyWorld")}...
                     </HeroTitle>
                     {/*<Image src={logoImg} alt="Logo"/>*/}
                     <AnimatedLogo className={logoVisible ? "active" : ""}/>

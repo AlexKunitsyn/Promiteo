@@ -1,4 +1,4 @@
-import {Box, styled, Typography, Grid} from '@mui/material';
+import {Box, styled, Typography, Grid, Button} from '@mui/material';
 import React from "react";
 import Image from 'next/image';
 
@@ -21,33 +21,33 @@ import Line from "@components/Line";
 import { useTranslation } from "../i18n/useTranslation";
 
 
-const aboutBoxList = [
-    {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: CardGiftcardIcon
-    },
-    {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: VerifiedIcon
-    },
-    {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: LocalShippingIcon
-    },
-    {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: BrushIcon
-    },
-    {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: DiamondIcon
-    }
-];
+// const aboutBoxList = [
+//     {
+//         name:'Заголовок пункта',
+//         description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//         icon: CardGiftcardIcon
+//     },
+//     {
+//         name:'Заголовок пункта',
+//         description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//         icon: VerifiedIcon
+//     },
+//     {
+//         name:'Заголовок пункта',
+//         description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//         icon: LocalShippingIcon
+//     },
+//     {
+//         name:'Заголовок пункта',
+//         description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//         icon: BrushIcon
+//     },
+//     {
+//         name:'Заголовок пункта',
+//         description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+//         icon: DiamondIcon
+//     }
+// ];
 
 
 
@@ -104,9 +104,12 @@ const IconWrapper = styled("div")(({ theme }) => ({
 
 const ProductBlock = () => {
     const { t, i18n } = useTranslation();
-    const aboutList = t("aboutList");
+    const aboutBoxList = t("aboutBoxList");
 
-    console.log(t("aboutList"),'t("aboutList")')
+    const aboutIcons = [
+        CardGiftcardIcon,VerifiedIcon,LocalShippingIcon,BrushIcon,DiamondIcon
+    ];
+
     return (
         <Box className="bg-block bg-noise bg-variant-purple">
             {/*<Container maxWidth="xl">*/}
@@ -115,24 +118,18 @@ const ProductBlock = () => {
                         <Grid item sm={6}
                         >
                             <Title>
-                                What Is Promiteo Box?
+                                {t("WhatIsPromiteoBox")}
                             </Title>
-                            <button onClick={() => i18n.changeLanguage("en")}>EN</button>
-                            <button onClick={() => i18n.changeLanguage("es")}>ES</button>
-                            <List>
-                                {Array.isArray(aboutList) &&aboutList.map((item, i) => (
-                                    <div key={i}>
-                                        <h3>{item.name}</h3>
-                                        <p>{item.description}</p>
-                                    </div>
-                                ))}
 
-                                {aboutBoxList.map((item, i) => {
-                                    const Icon = item.icon;
+                            <List>
+
+
+                                {Array.isArray(aboutBoxList) && aboutBoxList.map((item, i) => {
+                                    const Icon = aboutIcons[i];
                                     return (
                                 <ListItem key={item.name+i}>
                                     <Grid container alignItems="center">
-                                        <Grid item xs={2} md={4}
+                                        <Grid item xs={2} md={2}
                                         sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>
                                             <IconWrapper>
                                                 <Icon sx={(theme) => ({
@@ -145,7 +142,7 @@ const ProductBlock = () => {
                                             </IconWrapper>
                                         </Grid>
 
-                                        <Grid item xs={10} md={8}>
+                                        <Grid item xs={10} md={10}>
                                             <ListItemText
                                                 primary={item.name}
                                                 secondary={item.description}

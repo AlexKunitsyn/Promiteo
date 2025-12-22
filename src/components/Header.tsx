@@ -12,11 +12,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Box, styled, Typography, Grid} from '@mui/material';
-
+import ReactCountryFlag from "react-country-flag";
 
 import Image from "next/image";
 
 import SmallLogo from '../images/logo2.svg';
+import {useTranslation} from "../i18n/useTranslation";
+
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -44,6 +46,7 @@ function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
     const [scrolled, setScrolled] = useState(false);
+    const { t, i18n } = useTranslation();
 
     const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -80,43 +83,6 @@ function ResponsiveAppBar() {
                        padding: "0 15px 0 0",
                        transition: "all 0.35s ease",
                    }}/>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'flex', md: 'none' },
-                                justifyContent:'center'
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'center' }}>
                         {pages.map((page) => (
                             <Button
@@ -127,6 +93,60 @@ function ResponsiveAppBar() {
                                 {page}
                             </Button>
                         ))}
+                    </Box>
+                    <Box sx={{display:'flex'}}>
+
+                        <Button onClick={(e) =>  i18n.changeLanguage("en")}>
+                            <ReactCountryFlag
+                                countryCode="GB"
+                                svg
+                                style={{ width: "1.5em", height: "1.5em" }}
+                            />
+                        </Button>
+                        <Button onClick={(e) =>  i18n.changeLanguage("es")}>
+                            <ReactCountryFlag
+                                countryCode="ES"
+                                svg
+                                style={{ width: "1.5em", height: "1.5em" }}
+                            />
+                        </Button>
+                        <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorElNav}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                                open={Boolean(anchorElNav)}
+                                onClose={handleCloseNavMenu}
+                                sx={{
+                                    display: { xs: 'flex', md: 'none' },
+                                    justifyContent:'center'
+                                }}
+                            >
+                                {pages.map((page) => (
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                        <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
+                        </Box>
                     </Box>
                     {/*<Box sx={{ flexGrow: 0 }}>*/}
                     {/*    <Tooltip title="Open settings">*/}

@@ -1,16 +1,26 @@
 {
-  "aboutList": [
+  "aboutBoxList": [
     {
-      "name": "Заголовок пункта",
-      "description": "Описание пункта. Текст..."
+      "name": "Idioma español seleccionado",
+      "description": "Idioma español seleccionado. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
     },
     {
-      "name": "Гарантия качества",
-      "description": "Мы проверяем каждый товар..."
+      "name": "Quality guarantee",
+      "description": "Idioma español seleccionado. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
     },
     {
-      "name": "Быстрая доставка",
-      "description": "Доставляем по всему миру..."
+      "name": "Fast delivery",
+      "description": "Idioma español seleccionado. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    },
+    {
+      "name": "Fast delivery",
+      "description": "Idioma español seleccionado. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    },
+    {
+      "name": "Fast delivery",
+      "description": "Idioma español seleccionado. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
     }
-  ]
+  ],
+  "WhatIsPromiteoBox": "¿Qué es Promiteo Box?",
+  "WelcomeToMyWorld": "Bienvenido a mi mundo"
 }
