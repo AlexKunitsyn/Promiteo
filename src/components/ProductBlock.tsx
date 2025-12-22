@@ -108,8 +108,13 @@ const ProductBlock = () => {
     const { t, i18n } = useTranslation();
     const ctx = useContext(LanguageContext);
     if (!ctx) return null;
+    type AboutBoxItem = {
+        name: string;
+        description: string;
+    };
 
-    const aboutBoxList = ctx.translations.aboutBoxList;
+    const aboutBoxList = ctx.translations.aboutBoxList as AboutBoxItem[];
+
 
     const aboutIcons = [
         CardGiftcardIcon,VerifiedIcon,LocalShippingIcon,BrushIcon,DiamondIcon
@@ -129,7 +134,7 @@ const ProductBlock = () => {
                             <List>
 
 
-                                {Array.isArray(aboutBoxList) && aboutBoxList.map((item, i) => {
+                                {aboutBoxList.map((item, i) => {
                                     const Icon = aboutIcons[i];
                                     return (
                                 <ListItem key={item.name+i}>
