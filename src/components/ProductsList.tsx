@@ -5,10 +5,10 @@ import Container from '@mui/material/Container';
 
 import palette from '../styles/palette';
 
-import item1 from '../images/1item.jpeg';
-import item2 from '../images/2item.jpeg';
-import item3 from '../images/3item.jpeg';
-import item4 from '../images/4item.jpeg';
+import item1 from '../images/1item.png';
+import item2 from '../images/2item.png';
+import item3 from '../images/3item.png';
+import item4 from '../images/4item.png';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
@@ -150,15 +150,15 @@ const ProductBlock = () => {
     `,
                 position: "relative",
                 overflow: "hidden",
-                "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    inset: 0,
-                    backgroundImage:
-                        "url('https://grainy-gradients.vercel.app/noise.svg')",
-                    opacity: 0.18,
-                    pointerEvents: "none",
-                },
+                // "&::before": {
+                //     content: '""',
+                //     position: "absolute",
+                //     inset: 0,
+                //     backgroundImage:
+                //         "url('https://grainy-gradients.vercel.app/noise.svg')",
+                //     opacity: 0.18,
+                //     pointerEvents: "none",
+                // },
             }}
         >
             <Container maxWidth="xl">

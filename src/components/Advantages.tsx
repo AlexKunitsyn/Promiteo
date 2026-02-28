@@ -109,7 +109,9 @@ const Title = styled('h2')(({ theme }) => ({
 
 const ForCustomerBlock = () => {
     return (
-        <Box className="bg-block bg-noise bg-variant-purple" sx={{position:'relative'}}>
+        <Box className="
+        bg-block bg-noise bg-variant-purple
+        " sx={{position:'relative'}}>
             <Box
                 sx={{
                     background: '#0A0F1A',

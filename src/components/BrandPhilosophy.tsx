@@ -115,7 +115,8 @@ const Title = styled('h2')(({ theme }) => ({
 
 const ProductBlock = () => {
     return (
-        <Box className="bg-block bg-noise bg-variant-purple">
+        <Box className="
+        bg-block bg-noise bg-variant-purple">
             <Line/>
             <BrandBackground>
                 <EmbossLogo/>
@@ -132,7 +133,45 @@ const ProductBlock = () => {
                                         lineHeight:3,
                                         color:palette.mainTextColor,
                                     }}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto asperiores atque corporis culpa delenitAb ad alias aliquid asperiores autem commodi, corporis cum cumque delectus ea fuga fugit iusto minima nesciunt placeat quaerat repudiandae sint sit suscipit tenetur totam vitae voluptas. Aliquid autem esse inventore, libero molestiae nihil nostrum nulla sed tempore tenetur. Accusamus ad animi corporis est fugit iusto labore nihil nostrum numquam? Ad aliquam culpa deleniti, distinctio ducimus enim eum ex illo modi obcaecati omnis, pariatur placeat quidem quisquam quod repudiandae sint voluptatem voluptatibus. Ab adipisci aliquam distinctio illo iste iusto, libero molestias, non nostrum officia porro quae quaerat temporibus. A aliquid asperiores at dignissimos dolorum ea ipsa maiores maxime modi molestiae mollitia nihil officiis porro praesentium quam, qui quos reiciendis reprehenderit repudiandae sunt suscipit, temporibus ut voluptatibus. Aperiam blanditiis dolor et eum fugit ipsam, laborum necessitatibus pariatur rerum sapiente sequi voluptatibus? Corporis, cupiditate eius eveniet maxime nemo nobis odio quam reiciendis vel vero? Ab autem culpa debitis dolorem eius impedit itaque magni maiores perspiciatis voluptas. Beatae eveniet id molestias numquam quia quod tenetur, voluptatem. A adipisci, alias architecto assumenda cum cumque delectus deleniti dolor
+                            Promiteo was born from a simple truth:
+                            desire should never be rushed, and passion should never be predictable.
+                        </Typography>
+                        <Typography component={'p'}
+                                    style={{
+                                        fontSize:'1.2rem',
+                                        lineHeight:3,
+                                        color:palette.mainTextColor,
+                                    }}>
+                            Inspired by the myth of Prometheus — the one who dared to steal fire from the gods — Promiteo brings fire back into the night, into moments meant to be remembered, not forgotten.
+                        </Typography>
+
+                        <Typography component={'p'}
+                                    style={{
+                                        fontSize:'1.2rem',
+                                        lineHeight:3,
+                                        color:palette.mainTextColor,
+                                    }}>
+                            This is not a box.
+                            It is an invitation.
+                        </Typography>
+
+                        <Typography component={'p'}
+                                    style={{
+                                        fontSize:'1.2rem',
+                                        lineHeight:3,
+                                        color:palette.mainTextColor,
+                                    }}>
+                            An invitation to pause, to disconnect from routine, and to reconnect with sensation.
+                            Every Promiteo Box is carefully curated to awaken touch, curiosity, and intimacy — without pressure, without scripts, without expectations.
+                        </Typography>
+
+                        <Typography component={'p'}
+                                    style={{
+                                        fontSize:'1.2rem',
+                                        lineHeight:3,
+                                        color:palette.mainTextColor,
+                                    }}>
+                            Designed for couples who understand that luxury is not excess, but experience.
                         </Typography>
                     </Container>
 

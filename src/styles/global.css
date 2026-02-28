@@ -39,8 +39,8 @@ html {
 :root {
     /* Эти переменные будут перезаписаны next/font,
        но нужны, чтобы IDE не ругался */
-    --font-inter: 'Inter', sans-serif;
-    --font-playfair: 'Playfair Display', serif;
+    /*--font-inter: 'Inter', sans-serif;*/
+    /*--font-playfair: 'Playfair Display', serif;*/
 
     /* Цветовая палитра */
     --color-bg: #0a0a0a;        /* глубокий черный */
@@ -57,7 +57,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-white);
 
-    font-family: var(--font-inter);
+    /*font-family: var(--font-inter);*/
     font-size: 16px;
     line-height: 1.6;
 
@@ -68,7 +68,7 @@ body {
    HEADINGS
    =============================== */
 h1, h2, h3 {
-    font-family: var(--font-playfair);
+    /*font-family: var(--font-playfair);*/
     color: var(--color-white);
     font-weight: 700;
 }

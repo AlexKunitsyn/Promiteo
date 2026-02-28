@@ -171,7 +171,9 @@ const ReviewsSlider =() => {
 
     return (
         <Box>
-            <Section className="bg-block bg-noise bg-variant-purple" sx={{position:'relative', minHeight:'75vh' }}>
+            <Section className="
+            bg-block bg-noise bg-variant-purple
+            " sx={{position:'relative', minHeight:'75vh' }}>
                 <Box
                     sx={{
                         background: '#131024',
