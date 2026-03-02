@@ -59,7 +59,8 @@ const ProductSection = styled(Box)(({ theme }) => ({
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
-    padding:'10vh 0 0 0'
+    padding:'10vh 0 0 0',
+    // textAlign:'left'
 
 }));
 
@@ -135,72 +136,84 @@ const ProductBlock = () => {
             {/*<Container maxWidth="xl">*/}
                 <ProductSection className="second-screen" id="next">
                     <Grid container >
-                        <Grid item sm={6}
-                        >
+                        <Grid item sm={6} sx={{padding:"0 0 0 20px"}}>
                             <Title>
                                 {/*{t("WhatIsPromiteoBox")}*/}
                                 A Private Ritual
                             </Title>
+                            <Typography component={'p'} variant={'body1'}>
+                                Whether discovered in a hotel room or chosen intentionally, Promiteo transforms an ordinary night into something personal and unforgettable.
+                            </Typography>
+                            <Typography component={'p'} variant={'body1'}>
+                                Inside, you’ll find more than products — you’ll find possibilities.
+                                Each item is selected to guide, not dictate. To suggest, not impose.
+                            </Typography>
 
-                            <List>
-                                <Typography>
-                                    Whether discovered in a hotel room or chosen intentionally, Promiteo transforms an ordinary night into something personal and unforgettable.
-                                </Typography>
-                                <Typography>
-                                    Inside, you’ll find more than products — you’ll find possibilities.
-                                    Each item is selected to guide, not dictate. To suggest, not impose.
-                                </Typography>
+                            <Typography component={'p'} variant={'h4'}
+                                        sx={{
+                                            color: palette.gold,
+                                            margin:'20px 0'
+                                        }}
+                            >
+                                No instructions.
+                            </Typography>
 
-                                <Typography>
-                                    No instructions.
-                                </Typography>
+                            <Typography component={'p'} variant={'h4'}
+                                        sx={{
+                                            color: palette.gold,
+                                            margin:'20px 0'
+                                        }}
+                            >
+                                No rules.
+                            </Typography>
 
-                                <Typography>
-                                    No rules.
-                                </Typography>
+                            <Typography component={'p'} variant={'h3'}
+                                        sx={{
+                                            color: palette.gold,
+                                            margin:'20px 0'
+                                        }}
+                            >
+                                Only the freedom to explore at your own rhythm.
+                            </Typography>
 
-                                <Typography>
-                                    Only the freedom to explore at your own rhythm.
-                                </Typography>
+                            {/*<List>*/}
+                            {/*    {aboutBoxList.map((item, i) => {*/}
+                            {/*        const Icon = aboutIcons[i];*/}
+                            {/*        return (*/}
+                            {/*    <ListItem key={item.name+i}>*/}
+                            {/*        <Grid container alignItems="center">*/}
+                            {/*            <Grid item xs={2} md={2}*/}
+                            {/*            sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>*/}
+                            {/*                <IconWrapper>*/}
+                            {/*                    <Icon sx={(theme) => ({*/}
+                            {/*                        fontSize: '30px',*/}
 
+                            {/*                        [theme.breakpoints.up('md')]: {*/}
+                            {/*                            fontSize: '40px',*/}
+                            {/*                        },*/}
+                            {/*                    })}/>*/}
+                            {/*                </IconWrapper>*/}
+                            {/*            </Grid>*/}
 
-                                {/*{aboutBoxList.map((item, i) => {*/}
-                                {/*    const Icon = aboutIcons[i];*/}
-                                {/*    return (*/}
-                                {/*<ListItem key={item.name+i}>*/}
-                                {/*    <Grid container alignItems="center">*/}
-                                {/*        <Grid item xs={2} md={2}*/}
-                                {/*        sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>*/}
-                                {/*            <IconWrapper>*/}
-                                {/*                <Icon sx={(theme) => ({*/}
-                                {/*                    fontSize: '30px',*/}
+                            {/*            <Grid item xs={10} md={10}>*/}
+                            {/*                <ListItemText*/}
+                            {/*                    primary={item.name}*/}
+                            {/*                    secondary={item.description}*/}
+                            {/*                    primaryTypographyProps={{*/}
+                            {/*                        fontSize: 30,*/}
+                            {/*                        color: "white",*/}
+                            {/*                    }}*/}
+                            {/*                    secondaryTypographyProps={{*/}
+                            {/*                        fontSize: 16,*/}
+                            {/*                        color: "#dddddd",*/}
+                            {/*                    }}*/}
+                            {/*                />*/}
+                            {/*            </Grid>*/}
+                            {/*        </Grid>*/}
+                            {/*    </ListItem>*/}
+                            {/*    )})}*/}
 
-                                {/*                    [theme.breakpoints.up('md')]: {*/}
-                                {/*                        fontSize: '40px',*/}
-                                {/*                    },*/}
-                                {/*                })}/>*/}
-                                {/*            </IconWrapper>*/}
-                                {/*        </Grid>*/}
-
-                                {/*        <Grid item xs={10} md={10}>*/}
-                                {/*            <ListItemText*/}
-                                {/*                primary={item.name}*/}
-                                {/*                secondary={item.description}*/}
-                                {/*                primaryTypographyProps={{*/}
-                                {/*                    fontSize: 30,*/}
-                                {/*                    color: "white",*/}
-                                {/*                }}*/}
-                                {/*                secondaryTypographyProps={{*/}
-                                {/*                    fontSize: 16,*/}
-                                {/*                    color: "#dddddd",*/}
-                                {/*                }}*/}
-                                {/*            />*/}
-                                {/*        </Grid>*/}
-                                {/*    </Grid>*/}
-                                {/*</ListItem>*/}
-                                {/*)})}*/}
-
-                            </List>
+                            {/*</List>*/}
                         </Grid>
                         <Grid item sm={6} style={{
                             clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)"}}>

@@ -1,30 +1,49 @@
 import { createTheme } from '@mui/material/styles';
+import palette from '../styles/palette';
+
 
 const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: { main: '#1976d2' },
-    secondary: { main: '#f50057' },
-  },
   typography: {
-    fontFamily: "var(--font-inter)",
+    fontFamily: '"Roboto", "Helvetica", "Arial", "Inter", sans-serif',
+    color:palette.mainTextColor,
+
     h1: {
-      fontFamily: "var(--font-playfair)",
+      fontSize: '48px',
       fontWeight: 700,
+      lineHeight: 1.2,
+
+      '@media (min-width:600px)': {
+        fontSize: '40px',
+      },
+      '@media (min-width:900px)': {
+        fontSize: '48px',
+      },
     },
+
     h2: {
-      fontFamily: "var(--font-playfair)",
-      fontWeight: 700,
+      fontSize: '36px',
+      fontWeight: 600,
     },
     h3: {
-      fontFamily: "var(--font-playfair)",
-      fontWeight: 700,
+      fontSize: '28px',
+      fontWeight: 600,
     },
     h4: {
-      fontFamily: "var(--font-playfair)",
-      fontWeight: 700,
+      fontSize: '24px',
+      fontWeight: 600,
+    },
+
+    body1: {
+      fontSize: '20px',
+      fontWeight: 400,
+      lineHeight: 1.8,
+    },
+
+    button: {
+      fontWeight: 600,
     },
   },
 });
+
 
 export default theme;

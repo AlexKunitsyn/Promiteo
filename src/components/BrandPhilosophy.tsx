@@ -127,50 +127,25 @@ const ProductBlock = () => {
                                 What Is Promiteo?
                             </Title>
                         </Box>
-                        <Typography component={'p'}
-                                    style={{
-                                        fontSize:'1.2rem',
-                                        lineHeight:3,
-                                        color:palette.mainTextColor,
-                                    }}>
+                        <Typography component={'p'} variant={'body1'}>
                             Promiteo was born from a simple truth:
                             desire should never be rushed, and passion should never be predictable.
                         </Typography>
-                        <Typography component={'p'}
-                                    style={{
-                                        fontSize:'1.2rem',
-                                        lineHeight:3,
-                                        color:palette.mainTextColor,
-                                    }}>
+                        <Typography component={'p'} variant={'body1'}>
                             Inspired by the myth of Prometheus — the one who dared to steal fire from the gods — Promiteo brings fire back into the night, into moments meant to be remembered, not forgotten.
                         </Typography>
 
-                        <Typography component={'p'}
-                                    style={{
-                                        fontSize:'1.2rem',
-                                        lineHeight:3,
-                                        color:palette.mainTextColor,
-                                    }}>
+                        <Typography component={'p'} variant={'body1'}>
                             This is not a box.
                             It is an invitation.
                         </Typography>
 
-                        <Typography component={'p'}
-                                    style={{
-                                        fontSize:'1.2rem',
-                                        lineHeight:3,
-                                        color:palette.mainTextColor,
-                                    }}>
+                        <Typography component={'p'} variant={'body1'}>
                             An invitation to pause, to disconnect from routine, and to reconnect with sensation.
                             Every Promiteo Box is carefully curated to awaken touch, curiosity, and intimacy — without pressure, without scripts, without expectations.
                         </Typography>
 
-                        <Typography component={'p'}
-                                    style={{
-                                        fontSize:'1.2rem',
-                                        lineHeight:3,
-                                        color:palette.mainTextColor,
-                                    }}>
+                        <Typography component={'p'} variant={'body1'}>
                             Designed for couples who understand that luxury is not excess, but experience.
                         </Typography>
                     </Container>

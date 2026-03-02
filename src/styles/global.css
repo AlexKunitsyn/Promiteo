@@ -91,6 +91,12 @@ p, span, div, a, button {
     cursor: default;
 }
 
+p {
+    font-size: 18px;
+    line-height:3;
+    /*color:palette.mainTextColor;*/
+}
+
 
 input, textarea {
     cursor: text;
