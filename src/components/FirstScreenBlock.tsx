@@ -8,6 +8,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import LogoIcon from '../images/logo.svg'
 
+import AnimatedLogo from './AnimatedLogo';
+
 
 const arrowFloat = keyframes`
   0% { transform: translate(-50%, 0); }
@@ -20,16 +22,16 @@ const arrowBlink = keyframes`
   50% { opacity: 0.6; }
 `;
 
-const fadeUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// const fadeUp = keyframes`
+//   from {
+//     opacity: 0;
+//     transform: translateY(20px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// `;
 
 
 const drawLogo = keyframes`
@@ -90,21 +92,21 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
-const HeroTitle  = styled('h1')(({ theme }) => ({
-    fontSize:'34px',
-    color:'rgba(255,255,255, 0.7)',
-    margin:'0 0 20px',
-    padding: 0,
-    fontWeight: 700,
-    opacity: 0,
-    animation: `${fadeUp} 1.6s ease-out forwards`,
-    animationDelay: "1.3s",
-
-    [theme.breakpoints.up('md')]: {
-        fontSize:'3.5rem',
-    },
-
-}));
+// const HeroTitle  = styled('h1')(({ theme }) => ({
+//     fontSize:'34px',
+//     color:'rgba(255,255,255, 0.7)',
+//     margin:'0 0 20px',
+//     padding: 0,
+//     fontWeight: 700,
+//     opacity: 0,
+//     animation: `${fadeUp} 1.6s ease-out forwards`,
+//     animationDelay: "1.3s",
+//
+//     [theme.breakpoints.up('md')]: {
+//         fontSize:'3.5rem',
+//     },
+//
+// }));
 
 
 const Welcome = styled(Box)(({ theme }) => ({
@@ -118,44 +120,6 @@ const Welcome = styled(Box)(({ theme }) => ({
 
 }));
 
-const AnimatedLogo = styled(LogoIcon)(({ theme }) => ({
-    width:'90vw',
-    color: '#F9CC3D',
-
-    // ЛОГОТИП НЕ ВИДЕН ДО СТАРТА АНИМАЦИИ
-    opacity: 0,
-
-    animation: "fadeInContainer 0s linear forwards",
-    animationDelay: "2s", // <- логотип становится видимым ровно когда начинается прорисовка
-
-    "@keyframes fadeInContainer": {
-        to: { opacity: 1 },
-    },
-
-
-
-    "& path": {
-        stroke: "#F9CC3D",
-        strokeWidth: 3,
-
-        fill: "transparent",          // скрываем заливку
-        strokeDasharray: 1500,
-        strokeDashoffset: 1500,       // скрываем stroke, но НЕ ломаем анимацию
-
-        animation: `
-      ${drawStroke} 4s ease forwards,
-      ${fillLogo} 1.4s ease forwards
-    `,
-        animationDelay: `
-      2s, 6s
-    `, // stroke: 2s–6s, fill: 6s+
-    },
-
-    [theme.breakpoints.up('md')]: {
-        width:'25vw',
-    },
-
-}));
 
 const FirstScreenBlock = () => {
     const handleScroll = () => {
@@ -163,11 +127,6 @@ const FirstScreenBlock = () => {
         next?.scrollIntoView({ behavior: "smooth" });
     };
 
-    const [logoVisible, setLogoVisible] = useState(false);
-
-    useEffect(() => {
-        setTimeout(() => setLogoVisible(true), 1800);
-    }, []);
     return (
         <FirstScreen>
             <FirstScreenImage src={firstScreenImg} alt="FirstScreenImg" style={{}} />
@@ -175,11 +134,11 @@ const FirstScreenBlock = () => {
 
             }}>
                 {/*<Image src={logoImg} alt="Logo"/>*/}
-                <AnimatedLogo className={logoVisible ? "active" : ""}/>
-                <HeroTitle>
-                    {/*{t("WelcomeToMyWorld")}...*/}
-                    Ignite the Night
-                </HeroTitle>
+                <AnimatedLogo/>
+                {/*<HeroTitle>*/}
+                {/*    /!*{t("WelcomeToMyWorld")}...*!/*/}
+                {/*    Ignite the Night*/}
+                {/*</HeroTitle>*/}
             </Welcome>
             <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                 <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />

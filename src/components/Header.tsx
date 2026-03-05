@@ -13,6 +13,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Box, styled, Typography, Grid} from '@mui/material';
 import ReactCountryFlag from "react-country-flag";
+import Link from "next/link";
+
 
 import Image from "next/image";
 
@@ -77,12 +79,14 @@ function ResponsiveAppBar() {
         <StyledAppBar className={scrolled ? "scrolled" : ""}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+                    <Link href='/'>
                    <SmallLogo
                        style={{
                        height: scrolled ? "35px":"50px",
                        padding: "0 15px 0 0",
                        transition: "all 0.35s ease",
                    }}/>
+                    </Link>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent:'center' }}>
                         {pages.map((page) => (
                             <Button

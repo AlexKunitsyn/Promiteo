@@ -5,7 +5,8 @@ import store from '../redux/store';
 import theme from '../styles/theme';
 import '../styles/global.css';
 import { Playfair_Display, Inter } from 'next/font/google';
-import Header from './../components/Header'
+import Header from '../components/Header'
+import Intro from '../components/Intro'
 import { LanguageProvider } from "../i18n/LanguageProvider";
 
 const playfair = Playfair_Display({
@@ -27,6 +28,7 @@ export default function MyApp({ Component, pageProps }) {
                 <ThemeProvider theme={theme}>
                     {/*<CssBaseline />*/}
                     <main className={`${playfair.variable} ${inter.variable}`}>
+                        <Intro/>
                         <Header/>
                         <Component {...pageProps} />
                     </main>
