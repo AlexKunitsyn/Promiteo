@@ -92,21 +92,23 @@ const ScrollDown = styled('button')(({ theme }) => ({
 
 }));
 
-// const HeroTitle  = styled('h1')(({ theme }) => ({
-//     fontSize:'34px',
-//     color:'rgba(255,255,255, 0.7)',
-//     margin:'0 0 20px',
-//     padding: 0,
-//     fontWeight: 700,
-//     opacity: 0,
-//     animation: `${fadeUp} 1.6s ease-out forwards`,
-//     animationDelay: "1.3s",
-//
-//     [theme.breakpoints.up('md')]: {
-//         fontSize:'3.5rem',
-//     },
-//
-// }));
+const HeroTitle  = styled('h1')(({ theme }) => ({
+    position:'relative',
+    left:'-45px',
+    fontSize:'34px',
+    color:'rgba(255,255,255, 0.7)',
+    margin:'0 0 20px',
+    padding: 0,
+    fontWeight: 700,
+    // opacity: 0,
+    // animation: `${fadeUp} 1.6s ease-out forwards`,
+    // animationDelay: "1.3s",
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
+
+}));
 
 
 const Welcome = styled(Box)(({ theme }) => ({
@@ -130,15 +132,16 @@ const FirstScreenBlock = () => {
     return (
         <FirstScreen>
             <FirstScreenImage src={firstScreenImg} alt="FirstScreenImg" style={{}} />
-            <Welcome style={{
-
+            <Welcome sx={{
+                position: 'relative',
+                // top: '-4vh'
             }}>
                 {/*<Image src={logoImg} alt="Logo"/>*/}
                 <AnimatedLogo/>
-                {/*<HeroTitle>*/}
-                {/*    /!*{t("WelcomeToMyWorld")}...*!/*/}
-                {/*    Ignite the Night*/}
-                {/*</HeroTitle>*/}
+                <HeroTitle>
+                    {/*{t("WelcomeToMyWorld")}...*/}
+                    Ignite the Night
+                </HeroTitle>
             </Welcome>
             <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                 <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
