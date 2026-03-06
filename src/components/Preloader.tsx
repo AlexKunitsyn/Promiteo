@@ -105,12 +105,12 @@ const Preloader = () => {
     useScrollLock(allowed !== true);
 
     useEffect(() => {
-        const confirmed = localStorage.getItem('ageConfirmed');
+        const confirmed = sessionStorage.getItem('ageConfirmed');
         setAllowed(confirmed === 'true');
     }, []);
 
     const confirmAge = () => {
-        localStorage.setItem('ageConfirmed', 'true');
+        sessionStorage.setItem('ageConfirmed', 'true');
         setAllowed(true);
     };
 

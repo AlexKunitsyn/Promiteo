@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
-            {/*<Preloader/>*/}
+            <Preloader/>
             <FirstScreenBlock/>
             <ProductBlock/>
             <BrandPhilosophy/>

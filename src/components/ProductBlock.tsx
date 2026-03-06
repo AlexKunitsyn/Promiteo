@@ -59,7 +59,7 @@ const ProductSection = styled(Box)(({ theme }) => ({
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
-    padding:'10vh 0 0 0',
+    // padding:'10vh 0 0 0',
     // textAlign:'left'
 
 }));
@@ -136,7 +136,13 @@ const ProductBlock = () => {
             {/*<Container maxWidth="xl">*/}
                 <ProductSection className="second-screen" id="next">
                     <Grid container >
-                        <Grid item sm={6} sx={{padding:"0 0 0 20px"}}>
+                        <Grid item sm={6} sx={{
+                            padding:"20px",
+                            display:"flex",
+                            flexDirection:'column',
+                            alignItems:'center',
+                            justifyContent:'center',
+                            }}>
                             <Title>
                                 {/*{t("WhatIsPromiteoBox")}*/}
                                 A Private Ritual
