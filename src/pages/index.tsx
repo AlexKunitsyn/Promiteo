@@ -16,9 +16,11 @@ import { keyframes } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import palette from '../styles/palette';
-import firstScreenImg from '../images/firstScreenImg.webp'
+
 // import logoImg from '../images/logo.svg'
 import LogoIcon from '../images/logo.svg'
+import firstScreenImg from "@images/firstScreenImg.webp";
+
 import {useTranslation} from "../i18n/useTranslation";
 
 
@@ -35,7 +37,7 @@ const Home = () => {
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
             <Preloader/>
-            <FirstScreenBlock/>
+            <FirstScreenBlock fistImage ={firstScreenImg} showLogo={true}/>
             <ProductBlock/>
             <BrandPhilosophy/>
             {/*<ProductsList/>*/}

@@ -7,7 +7,11 @@ import { Box, Button, Typography } from '@mui/material';
 import ProductsList from "@components/ProductsList";
 import FirstScreenBlock from "@components/FirstScreenBlock";
 import Preloader from "@components/Preloader";
+import ReviewsSlider from "@components/ReviewsSlider";
+import ContactForm from "@components/ContactForm";
 // import { ReactComponent as FirstScreenImg } from '../../images/firstScreen.jpg';
+import boxFirstSeriesImg from "@images/boxFirstSeries.png";
+
 
 const MainContainer = styled(Box)(({ theme }) => ({
     position:'relative',
@@ -18,8 +22,10 @@ const BoxSeriesOne = () => {
         return (
         <MainContainer>
             <Preloader/>
-            <FirstScreenBlock/>
+            <FirstScreenBlock fistImage = {boxFirstSeriesImg} showLogo={false} />
             <ProductsList/>
+            <ReviewsSlider/>
+            <ContactForm/>
         </MainContainer>
     );
 };

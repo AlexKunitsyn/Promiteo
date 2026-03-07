@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import Image from 'next/image';
 
 
-import firstScreenImg from "@images/firstScreenImg.webp";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import LogoIcon from '../images/logo.svg'
@@ -123,7 +122,13 @@ const Welcome = styled(Box)(({ theme }) => ({
 }));
 
 
-const FirstScreenBlock = () => {
+const FirstScreenBlock = (props) => {
+    const {
+        fistImage,
+        showLogo
+    }= props
+
+
     const handleScroll = () => {
         const next = document.getElementById("next");
         next?.scrollIntoView({ behavior: "smooth" });
@@ -131,18 +136,22 @@ const FirstScreenBlock = () => {
 
     return (
         <FirstScreen>
-            <FirstScreenImage src={firstScreenImg} alt="FirstScreenImg" style={{}} />
-            <Welcome sx={{
-                position: 'relative',
-                // top: '-4vh'
-            }}>
-                {/*<Image src={logoImg} alt="Logo"/>*/}
-                <AnimatedLogo/>
-                <HeroTitle>
-                    {/*{t("WelcomeToMyWorld")}...*/}
-                    Ignite the Night
-                </HeroTitle>
-            </Welcome>
+            <FirstScreenImage src={fistImage} alt="FirstScreenImg" style={{}} />
+            {showLogo &&
+                <Welcome sx={{
+                    position: 'relative',
+                    // top: '-4vh'
+                }}>
+                    {/*<Image src={logoImg} alt="Logo"/>*/}
+                    <AnimatedLogo/>
+                    <HeroTitle>
+                        {/*{t("WelcomeToMyWorld")}...*/}
+                        Ignite the Night
+                    </HeroTitle>
+                </Welcome>
+
+            }
+
             <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                 <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
             </ScrollDown>
