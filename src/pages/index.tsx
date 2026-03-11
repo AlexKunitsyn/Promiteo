@@ -36,14 +36,14 @@ const Home = () => {
   return (
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
-            <Preloader/>
+            {/*<Preloader/>*/}
             <FirstScreenBlock fistImage ={firstScreenImg} showLogo={true}/>
             <ProductBlock/>
             <BrandPhilosophy/>
             {/*<ProductsList/>*/}
             <BrandSlider/>
             <ForCustomerBlock/>
-            <WhoNeedThis/>
+            {/*<WhoNeedThis/>*/}
 
             <ReviewsSlider/>
             <ContactForm/>

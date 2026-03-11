@@ -6,8 +6,11 @@ import theme from '../styles/theme';
 import '../styles/global.css';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Intro from '../components/Intro'
 import { LanguageProvider } from "../i18n/LanguageProvider";
+import Preloader from "@components/Preloader";
+import React from "react";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -28,9 +31,11 @@ export default function MyApp({ Component, pageProps }) {
                 <ThemeProvider theme={theme}>
                     {/*<CssBaseline />*/}
                     <main className={`${playfair.variable} ${inter.variable}`}>
-                        <Intro/>
+                        <Preloader/>
+                        {/*<Intro/>*/}
                         <Header/>
                         <Component {...pageProps} />
+                        <Footer/>
                     </main>
                 </ThemeProvider>
             </LanguageProvider>
