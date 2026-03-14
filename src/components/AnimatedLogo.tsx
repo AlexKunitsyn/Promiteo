@@ -69,6 +69,11 @@ const AnimatedLogo = () => {
     const [logoVisible, setLogoVisible] = useState(false);
 
     useEffect(() => {
+        const confirmed = sessionStorage.getItem('ageConfirmed');
+        console.log(confirmed,'confirmed')
+    }, []);
+
+    useEffect(() => {
         setTimeout(() => setLogoVisible(true), 1800);
     }, []);
 

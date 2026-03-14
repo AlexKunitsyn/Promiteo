@@ -115,8 +115,7 @@ const Title = styled('h2')(({ theme }) => ({
 
 const ProductBlock = () => {
     return (
-        <Box className="
-        bg-block bg-noise bg-variant-purple">
+        <Box className="bg-block bg-noise bg-variant-purple">
             <Line/>
             <BrandBackground>
                 <EmbossLogo/>

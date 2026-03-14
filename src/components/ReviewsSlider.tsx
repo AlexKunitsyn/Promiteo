@@ -176,7 +176,7 @@ const ReviewsSlider =() => {
             " sx={{position:'relative', minHeight:'75vh' }}>
                 <Box
                     sx={{
-                        background: '#131024',
+                        background: '#12101e',
                         padding: '120px 0',
                         clipPath: 'polygon(0 100%, 100% 100%, 100% 60%, 0 0)',
                         transform: 'scaleX(-1)',

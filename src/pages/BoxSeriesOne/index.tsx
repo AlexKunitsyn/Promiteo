@@ -21,7 +21,7 @@ const MainContainer = styled(Box)(({ theme }) => ({
 const BoxSeriesOne = () => {
         return (
         <MainContainer>
-            <Preloader/>
+
             <FirstScreenBlock fistImage = {boxFirstSeriesImg} showLogo={false} />
             <ProductsList/>
             <ReviewsSlider/>

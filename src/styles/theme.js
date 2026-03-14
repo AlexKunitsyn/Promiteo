@@ -72,12 +72,13 @@ const theme = createTheme({
       },
     },
     h6: {
-      fontWeight: 700,
-      fontSize: 20,
+      textTransform:'uppercase',
+      fontWeight: 400,
+      fontSize: 16,
       lineHeight: '24px',
       letterSpacing: '-0.3px',
       '@media (min-width: 1440px)': {
-        fontSize: 18,
+        fontSize: 15,
         lineHeight: '22px',
       },
     },
@@ -203,7 +204,7 @@ const theme = createTheme({
       letterSpacing: '-0.3px',
     },
     caption3: {
-      fontSize: 12,
+      fontSize: 18,
       fontWeight: 400,
       lineHeight: '18px',
       letterSpacing: '-0.3px',

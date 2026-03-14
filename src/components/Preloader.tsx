@@ -80,8 +80,11 @@ const AgeCard = styled('div')({
     boxShadow: '0 40px 120px rgba(0,0,0,0.6)',
 });
 
-const Preloader = () => {
+const Preloader = (props) => {
+    const {} = props;
+
     const [allowed, setAllowed] = useState<boolean | null>(null);
+    const [isResolved, setIsResolved] = useState(false);
 
     const useScrollLock = (locked: boolean) => {
         useEffect(() => {
@@ -118,36 +121,39 @@ const Preloader = () => {
 
     return (
         <AgeOverlay>
-            <AgeCard>
-                <GlowLogo>
-                    <AnimatedLogo/>
-                </GlowLogo>
-                <Typography variant="h5" gutterBottom>
-                    Age Verification
-                </Typography>
+            {!allowed  && allowed !== null &&
+                <AgeCard>
+                    <GlowLogo>
+                        <AnimatedLogo/>
+                    </GlowLogo>
+                    <Typography variant="h5" gutterBottom>
+                        Age Verification
+                    </Typography>
 
-                <Typography sx={{ opacity: 0.75, mb: 3 }}>
-                    You must be 18 years or older to enter this site.
-                </Typography>
+                    <Typography sx={{ opacity: 0.75, mb: 3 }}>
+                        You must be 18 years or older to enter this site.
+                    </Typography>
 
-                <Button
-                    variant="contained"
-                    fullWidth
-                    onClick={confirmAge}
-                    sx={{
-                        background: '#C9A66B',
-                        color: '#000',
-                        fontWeight: 600,
-                        borderRadius: 999,
-                        py: 1.4,
-                        '&:hover': {
-                            background: '#d9b77d',
-                        },
-                    }}
-                >
-                    I am 18+
-                </Button>
-            </AgeCard>
+                    <Button
+                        variant="contained"
+                        fullWidth
+                        onClick={confirmAge}
+                        sx={{
+                            background: '#C9A66B',
+                            color: '#000',
+                            fontWeight: 600,
+                            borderRadius: 999,
+                            py: 1.4,
+                            '&:hover': {
+                                background: '#d9b77d',
+                            },
+                        }}
+                    >
+                        I am 18+
+                    </Button>
+                </AgeCard>
+            }
+
         </AgeOverlay>
     );
 

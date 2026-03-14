@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 import Intro from '../components/Intro'
 import { LanguageProvider } from "../i18n/LanguageProvider";
 import Preloader from "@components/Preloader";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -24,21 +24,30 @@ const inter = Inter({
     variable: '--font-inter'
 });
 
-export default function MyApp({ Component, pageProps }) {
+
+
+ const MyApp =({ Component, pageProps }) => {
+
     return (
         <Provider store={store}>
             <LanguageProvider>
                 <ThemeProvider theme={theme}>
                     {/*<CssBaseline />*/}
                     <main className={`${playfair.variable} ${inter.variable}`}>
-                        <Preloader/>
+                        <Preloader />
+
                         {/*<Intro/>*/}
                         <Header/>
                         <Component {...pageProps} />
                         <Footer/>
+
+
+
                     </main>
                 </ThemeProvider>
             </LanguageProvider>
         </Provider>
     );
 }
+
+export default MyApp
