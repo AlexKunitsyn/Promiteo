@@ -37,9 +37,10 @@ const Home = () => {
     <Box sx={{ textAlign: 'center'}}>
         <MainContainer>
             {/*<Preloader/>*/}
-            <FirstScreenBlock fistImage ={firstScreenImg} showLogo={true}/>
-            <ProductBlock/>
+            <FirstScreenBlock fistImage ={firstScreenImg} showLogo={true} text={'Ignite the Night'}/>
             <BrandPhilosophy/>
+            <ProductBlock/>
+
             {/*<ProductsList/>*/}
             <BrandSlider/>
             <ForCustomerBlock/>

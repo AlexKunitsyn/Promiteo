@@ -18,15 +18,11 @@ const MainContainer = styled(Box)(({ theme }) => ({
 
 }));
 
-const BoxSeriesOne = () => {
+const Contacts = () => {
         return (
         <MainContainer>
 
-            <FirstScreenBlock
-                fistImage = {boxFirstSeriesImg}
-                showLogo={false}
-                text={'What Is inside?'}
-            />
+            <FirstScreenBlock fistImage = {boxFirstSeriesImg} showLogo={false} />
             <ProductsList/>
             <ReviewsSlider/>
             <ContactForm/>
@@ -34,4 +30,4 @@ const BoxSeriesOne = () => {
     );
 };
 
-export default BoxSeriesOne;
+export default Contacts;

@@ -125,8 +125,9 @@ const Welcome = styled(Box)(({ theme }) => ({
 const FirstScreenBlock = (props) => {
     const {
         fistImage,
-        showLogo
-    }= props
+        showLogo,
+        text
+    }= props;
 
 
     const handleScroll = () => {
@@ -137,20 +138,18 @@ const FirstScreenBlock = (props) => {
     return (
         <FirstScreen>
             <FirstScreenImage src={fistImage} alt="FirstScreenImg" style={{}} />
-            {showLogo &&
                 <Welcome sx={{
                     position: 'relative',
                     // top: '-4vh'
                 }}>
-                    {/*<Image src={logoImg} alt="Logo"/>*/}
-                    <AnimatedLogo/>
+                    {showLogo && <AnimatedLogo/> }
+
                     <HeroTitle>
-                        {/*{t("WelcomeToMyWorld")}...*/}
-                        Ignite the Night
+                        {text}
                     </HeroTitle>
                 </Welcome>
 
-            }
+
 
             <ScrollDown className="scroll-button" onClick={()=>handleScroll()}>
                 <KeyboardArrowDownIcon style={{color: '#D4AF37',fontSize: '3rem'}} />
