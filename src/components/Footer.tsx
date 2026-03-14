@@ -105,7 +105,7 @@ function ResponsiveAppBar() {
                                     Info
                                 </Typography>
                                 <List>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <Link href="/">What's inside</Link>
                                     </FooterListItems>
                                 </List>
@@ -115,16 +115,16 @@ function ResponsiveAppBar() {
                                     Info
                                 </Typography>
                                 <List>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <Link href="/about">About</Link>
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <Link href="/faq">Contact</Link>
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <Link href="/faq">FAQ</Link>
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <Link href="/faq">Privacy Policy</Link>
                                     </FooterListItems>
                                 </List>
@@ -134,18 +134,18 @@ function ResponsiveAppBar() {
                                     Contact
                                 </Typography>
                                 <List>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <strong>Monday - Friday</strong>
                                         <p>09:00 - 18:00 (GMT)</p>
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <strong>Phone: +455 544 455 255 </strong>
                                         <p>(call to national mobile network)</p>
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                          Email: geral@promiteocompany.com
                                     </FooterListItems>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         WhatsApp: +455 544 455 255
                                     </FooterListItems>
                                 </List>
@@ -155,7 +155,7 @@ function ResponsiveAppBar() {
                                     Head Office
                                 </Typography>
                                 <List>
-                                    <FooterListItems disablePadding>
+                                    <FooterListItems >
                                         <address>
                                             Beautyenigma, Lda.
 
