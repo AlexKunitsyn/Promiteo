@@ -11,6 +11,7 @@ import Intro from '../components/Intro'
 import { LanguageProvider } from "../i18n/LanguageProvider";
 import Preloader from "@components/Preloader";
 import React, {useEffect, useState} from "react";
+import Head from "next/head";
 
 const playfair = Playfair_Display({
     subsets: ['latin'],
@@ -33,6 +34,9 @@ const inter = Inter({
             <LanguageProvider>
                 <ThemeProvider theme={theme}>
                     {/*<CssBaseline />*/}
+                    <Head>
+                        <link rel="icon" href="/favicon.svg" />
+                    </Head>
                     <main className={`${playfair.variable} ${inter.variable}`}>
                         <Preloader />
 
