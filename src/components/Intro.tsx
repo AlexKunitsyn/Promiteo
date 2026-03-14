@@ -209,7 +209,7 @@ const Intro = () => {
             {isVisible && (
                 <IntroContainer
                     style={{
-                        ...overlayStyle,
+                        // ...overlayStyle,
                         opacity: isFading ? 0 : 1,
                         pointerEvents: isFading ? "none" : "auto",
                     }}
