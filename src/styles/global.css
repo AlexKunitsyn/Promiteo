@@ -187,18 +187,6 @@ img {
     display: block;
 }
 
-
-/* --- NOISE OVERLAY (общий) --- */
-.bg-noise::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.17;
-    pointer-events: none;
-    z-index: 2;
-}
-
 /* --- COMMON NOISE + BASE --- */
 .bg-block {
     position: relative;
@@ -213,7 +201,7 @@ img {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    /*background-image: url("https://grainy-gradients.vercel.app/noise.svg");*/
     opacity: 0.17;
     pointer-events: none;
     z-index: 2;

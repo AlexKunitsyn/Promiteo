@@ -168,8 +168,7 @@ const WhoNeedThis = () => {
                     content: '""',
                     position: "absolute",
                     inset: 0,
-                    backgroundImage:
-                        "url('https://grainy-gradients.vercel.app/noise.svg')",
+                    // backgroundImage:"url('https://grainy-gradients.vercel.app/noise.svg')",
                     opacity: 0.18,
                     pointerEvents: "none",
                 },
