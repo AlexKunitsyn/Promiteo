@@ -1,7 +1,8 @@
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@mui/material';
 // import CssBaseline from '@mui/material/CssBaseline';
-import store from '../redux/store';
+import { AppProps } from 'next/app';
+import { store } from '@redux/store';
 import theme from '../styles/theme';
 import '../styles/global.css';
 import { Playfair_Display, Inter } from 'next/font/google';
@@ -27,7 +28,7 @@ const inter = Inter({
 
 
 
- const MyApp =({ Component, pageProps }) => {
+ const MyApp =({ Component, pageProps }: AppProps) => {
 
     return (
         <Provider store={store}>

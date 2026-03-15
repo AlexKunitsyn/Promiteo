@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Box, styled, Typography, Button} from '@mui/material';
-import Image from 'next/image';
-import { keyframes } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { confirmAge } from '@redux/slices/ageSlice';
+import { useAppDispatch } from '@redux/hooks';
+
 
 import palette from '../styles/palette';
 import firstScreenImg from '../images/firstScreenImg.jpg'
@@ -82,6 +82,7 @@ const AgeCard = styled('div')({
 
 const Preloader = (props) => {
     const {} = props;
+    const dispatch = useAppDispatch();
 
     const [allowed, setAllowed] = useState<boolean | null>(null);
     const [isResolved, setIsResolved] = useState(false);
@@ -112,7 +113,8 @@ const Preloader = (props) => {
         setAllowed(confirmed === 'true');
     }, []);
 
-    const confirmAge = () => {
+    const confirmAgefunc = () => {
+        dispatch(confirmAge());
         sessionStorage.setItem('ageConfirmed', 'true');
         setAllowed(true);
     };
@@ -137,7 +139,7 @@ const Preloader = (props) => {
                     <Button
                         variant="contained"
                         fullWidth
-                        onClick={confirmAge}
+                        onClick={confirmAgefunc}
                         sx={{
                             background: '#C9A66B',
                             color: '#000',
