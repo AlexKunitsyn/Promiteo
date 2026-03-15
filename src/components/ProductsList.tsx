@@ -164,9 +164,9 @@ const ProductBlock = () => {
             <Container maxWidth="xl">
                 <ProductsSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="pro" id="next">
                     <Grid container >
-                        <Title>
-                            What Is inside?
-                        </Title>
+                        {/*<Title>*/}
+                        {/*    What Is inside?*/}
+                        {/*</Title>*/}
                         <Grid container>
                             {productList.map((item, i) => {
                                 return (

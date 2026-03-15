@@ -11,9 +11,7 @@ import ReviewsSlider from '@components/ReviewsSlider';
 import ContactForm from '@components/ContactForm';
 import Preloader from '@components/Preloader';
 import FirstScreenBlock from '@components/FirstScreenBlock';
-import Image from 'next/image';
-import { keyframes } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useAppSelector } from '@redux/hooks';
 
 import palette from '../styles/palette';
 
@@ -30,6 +28,9 @@ const MainContainer = styled(Box)(({ theme }) => ({
 
 const Home = () => {
     const { t, i18n } = useTranslation();
+    const age = useAppSelector((state) => state.age.isAgeConfirmed);
+
+    console.log(age,'age')
 
 
 

@@ -81,7 +81,7 @@ const IntroContainer = styled('div')({
 
 const HeroTitle  = styled('h1')(({ theme }) => ({
     position:'relative',
-    left:'-45px',
+    // left:'-45px',
     fontSize:'34px',
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',

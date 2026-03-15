@@ -104,7 +104,7 @@ const HeroTitle  = styled('h1')(({ theme }) => ({
     // animationDelay: "1.3s",
 
     [theme.breakpoints.up('md')]: {
-        fontSize:'3.5rem',
+        fontSize:'4.5rem',
     },
 
 }));

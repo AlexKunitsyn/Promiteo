@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {styled} from "@mui/material";
 import { Box, Button, Typography } from '@mui/material';
 import ProductsList from "@components/ProductsList";
-import FirstScreenBlock from "@components/FirstScreenBlock";
+import FirstScreenBoxPage from "@components/FirstScreenBoxPage";
 import Preloader from "@components/Preloader";
 import ReviewsSlider from "@components/ReviewsSlider";
 import ContactForm from "@components/ContactForm";
@@ -22,7 +22,7 @@ const BoxSeriesOne = () => {
         return (
         <MainContainer>
 
-            <FirstScreenBlock
+            <FirstScreenBoxPage
                 fistImage = {boxFirstSeriesImg}
                 showLogo={false}
                 text={'What Is inside?'}
