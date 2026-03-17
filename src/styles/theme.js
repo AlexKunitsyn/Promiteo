@@ -4,7 +4,7 @@ import palette from '../styles/palette';
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", "Inter", sans-serif',
+    fontFamily: 'inherit',
     color:palette.mainTextColor,
 
     h1: {
@@ -25,12 +25,12 @@ const theme = createTheme({
       lineHeight: '36px',
     },
     h2: {
-      fontWeight: 600,
-      fontSize: 28,
+      fontWeight: 500,
+      fontSize: 40,
       lineHeight: '36px',
-      letterSpacing: '-0.3px',
+      // letterSpacing: '-0.3px',
       '@media (min-width: 1440px)': {
-        fontSize: 24,
+        fontSize: 20,
         lineHeight: '28px',
       },
     },
@@ -84,12 +84,12 @@ const theme = createTheme({
     },
     body1: {
       fontSize: 17,
-      lineHeight: '24px',
+      lineHeight: '30px',
       fontWeight: 400,
       letterSpacing: '-0.3px',
       '@media (min-width: 1440px)': {
         fontSize: 14,
-        lineHeight: '22px',
+        lineHeight: '30px',
       },
     },
 
@@ -104,13 +104,13 @@ const theme = createTheme({
     },
 
     body2: {
-      fontSize: 20,
-      lineHeight: '27px',
-      fontWeight: 600,
+      fontSize: 18,
+      lineHeight: '30px',
+      fontWeight: 300,
       letterSpacing: '-0.3px',
       '@media (min-width: 1440px)': {
         fontSize: 18,
-        lineHeight: '22px',
+        lineHeight: '30px',
       },
     },
     body3: {

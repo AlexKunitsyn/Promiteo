@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Box, styled, Typography, Button, keyframes} from '@mui/material';
-import LogoIcon from "@images/logo.svg";
+// import LogoIcon from "@images/logo.svg";
+import LogoIcon from "@images/LogoNew2.svg";
 import LogoIcon1 from "@images/LogoNew.svg";
 // import LogoIcon2 from "@images/LogoNew1.svg";
 
@@ -37,45 +38,6 @@ const AnimatedLogoStyle = styled(LogoIcon)(({ theme }) => ({
 
 
 
-    "& path": {
-        stroke: "#F9CC3D",
-        strokeWidth: 3,
-
-        fill: "transparent",          // скрываем заливку
-        strokeDasharray: 1500,
-        strokeDashoffset: 1500,       // скрываем stroke, но НЕ ломаем анимацию
-
-        animation: `
-      ${drawStroke} 4s ease forwards,
-      ${fillLogo} 1.4s ease forwards
-    `,
-        animationDelay: `
-      2s, 6s
-    `, // stroke: 2s–6s, fill: 6s+
-    },
-
-    [theme.breakpoints.up('md')]: {
-        width:'25vw',
-    },
-
-}));
-
-
-
-const AnimatedLogoStyle1 = styled(LogoIcon1)(({ theme }) => ({
-    width:'90vw',
-    color: '#F9CC3D',
-
-    // ЛОГОТИП НЕ ВИДЕН ДО СТАРТА АНИМАЦИИ
-    opacity: 0,
-
-    animation: "fadeInContainer 0s linear forwards",
-    animationDelay: "2s", // <- логотип становится видимым ровно когда начинается прорисовка
-
-    "@keyframes fadeInContainer": {
-        to: { opacity: 1 },
-    },
-
 
 
     "& path": {
@@ -100,6 +62,47 @@ const AnimatedLogoStyle1 = styled(LogoIcon1)(({ theme }) => ({
     },
 
 }));
+
+
+
+// const AnimatedLogoStyle1 = styled(LogoIcon1)(({ theme }) => ({
+//     width:'90vw',
+//     color: '#F9CC3D',
+//
+//     // ЛОГОТИП НЕ ВИДЕН ДО СТАРТА АНИМАЦИИ
+//     opacity: 0,
+//
+//     animation: "fadeInContainer 0s linear forwards",
+//     animationDelay: "2s", // <- логотип становится видимым ровно когда начинается прорисовка
+//
+//     "@keyframes fadeInContainer": {
+//         to: { opacity: 1 },
+//     },
+//
+//
+//
+//     "& path": {
+//         stroke: "#F9CC3D",
+//         strokeWidth: 3,
+//
+//         fill: "transparent",          // скрываем заливку
+//         strokeDasharray: 1500,
+//         strokeDashoffset: 1500,       // скрываем stroke, но НЕ ломаем анимацию
+//
+//         animation: `
+//       ${drawStroke} 4s ease forwards,
+//       ${fillLogo} 1.4s ease forwards
+//     `,
+//         animationDelay: `
+//       2s, 6s
+//     `, // stroke: 2s–6s, fill: 6s+
+//     },
+//
+//     [theme.breakpoints.up('md')]: {
+//         width:'25vw',
+//     },
+//
+// }));
 
 
 const AnimatedLogo = () => {
@@ -116,8 +119,8 @@ const AnimatedLogo = () => {
 
     return (
         <>
-        {/*<AnimatedLogoStyle className={logoVisible ? "active" : ""}/>*/}
-        <AnimatedLogoStyle1 className={logoVisible ? "active" : ""}/>
+        <AnimatedLogoStyle className={logoVisible ? "active" : ""}/>
+        {/*<AnimatedLogoStyle1 className={logoVisible ? "active" : ""}/>*/}
         </>
     );
 }

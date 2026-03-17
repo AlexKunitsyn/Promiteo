@@ -5,7 +5,8 @@ import { AppProps } from 'next/app';
 import { store } from '@redux/store';
 import theme from '../styles/theme';
 import '../styles/global.css';
-import { Playfair_Display, Inter } from 'next/font/google';
+// import { Playfair_Display, Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Intro from '../components/Intro'
@@ -14,16 +15,24 @@ import Preloader from "@components/Preloader";
 import React, {useEffect, useState} from "react";
 import Head from "next/head";
 
-const playfair = Playfair_Display({
-    subsets: ['latin'],
-    weight: ['400', '500', '700', '900'],
-    variable: '--font-playfair'
-});
+// const playfair = Playfair_Display({
+//     subsets: ['latin'],
+//     weight: ['400', '500', '700', '900'],
+//     variable: '--font-playfair'
+// });
+//
+// const inter = Inter({
+//     subsets: ['latin'],
+//     weight: ['300', '400', '500', '600'],
+//     variable: '--font-inter'
+// });
 
-const inter = Inter({
+const poppins = Poppins({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600'],
-    variable: '--font-inter'
+    weight: [
+        '100','200','300','400','500','600','700','800','900'
+    ],
+    style: ['normal', 'italic'],
 });
 
 
@@ -38,7 +47,7 @@ const inter = Inter({
                     <Head>
                         <link rel="icon" href="/favicon.svg" />
                     </Head>
-                    <main className={`${playfair.variable} ${inter.variable}`}>
+                    <main className={poppins.className}>
                         <Preloader />
 
                         {/*<Intro/>*/}
