@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    font-family: inherit;
 }
 
 *:focus {
@@ -54,6 +55,7 @@ html {
    BODY
    =============================== */
 body {
+    font-family: "Poppins", sans-serif;
     background-color: var(--color-bg);
     color: var(--color-white);
 

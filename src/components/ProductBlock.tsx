@@ -13,6 +13,8 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BrushIcon from '@mui/icons-material/Brush';
 import DiamondIcon from '@mui/icons-material/Diamond';
 
+import Link from "next/link";
+
 import palette from '../styles/palette';
 
 import boxImage from '../images/box2.jpg';
@@ -22,6 +24,7 @@ import Line from "@components/Line";
 import { useTranslation } from "../i18n/useTranslation";
 import { useContext } from "react";
 import { LanguageContext } from "../i18n/LanguageProvider";
+import Container from "@mui/material/Container";
 
 
 // const aboutBoxList = [
@@ -78,7 +81,9 @@ const BoxImage = styled(Image)(({ theme }) => ({
 const Title = styled('h2')(({ theme }) => ({
     width:'100%',
     textAlign:'center',
-    fontSize:'38px',
+    fontSize:'40px',
+    fontWeight:'500',
+    margin:'0 0 30px',
     color:palette.mainTextColor,
 
     [theme.breakpoints.up('md')]: {
@@ -106,6 +111,28 @@ const IconWrapper = styled("div")(({ theme }) => ({
     },
 }));
 
+const LinkBtn = styled(Link)(({ theme }) => ({
+    padding:'10px',
+    border: "2px solid #F9CC3D", // Золотой
+    borderRadius:'10px',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "#E9BA39",
+    color: "white",
+    fontSize: 16,
+    fontWeight:'600',
+    width:'200px',
+    margin:'30px 0 0 0',
+
+
+    [theme.breakpoints.up('md')]: {
+        // fontSize: '40px',
+        // width: 80,
+        // height: 80,
+    },
+}));
+
 const ProductBlock = () => {
     const { t, i18n } = useTranslation();
     const ctx = useContext(LanguageContext);
@@ -124,109 +151,92 @@ const ProductBlock = () => {
 
     return (
         <Box
-            sx={{
-                // backgroundImage: `url(${backgroundImg.src})`,
-                // backgroundSize: 'cover',
-                // backgroundPosition: 'center',
-                // backgroundRepeat: 'no-repeat'
-            }}
-            className="
-        bg-block bg-noise bg-variant-purple
-        ">
+            // className="bg-block bg-noise bg-variant-purple"
+        >
             {/*<Container maxWidth="xl">*/}
                 <ProductSection className="second-screen" id="next">
-                    <Grid container >
-                        <Grid item sm={6} sx={{
-                            padding:"20px",
-                            display:"flex",
-                            flexDirection:'column',
-                            alignItems:'center',
-                            justifyContent:'center',
-                            }}>
-                            <Title>
-                                {/*{t("WhatIsPromiteoBox")}*/}
-                                A Private Ritual
-                            </Title>
-                            <Typography component={'p'} variant={'body1'}>
-                                Whether discovered in a hotel room or chosen intentionally, Promiteo transforms an ordinary night into something personal and unforgettable.
-                            </Typography>
-                            <Typography component={'p'} variant={'body1'}>
-                                Inside, you’ll find more than products — you’ll find possibilities.
-                                Each item is selected to guide, not dictate. To suggest, not impose.
-                            </Typography>
+                    {/*<Container  maxWidth="xl">*/}
+                        <Grid container >
+                            <Grid item sm={6} sx={{
+                                padding:"10vh",
+                                // display:"flex",
+                                // flexDirection:'column',
+                                // alignItems:'center',
+                                // justifyContent:'center',
+                                textAlign:'left'
+                                }}>
+                                <Title>
+                                    {/*{t("WhatIsPromiteoBox")}*/}
+                                    A Private Ritual
+                                </Title>
+                                <Typography component={'p'} variant={'body2'}>
+                                    Whether discovered in a hotel room or chosen intentionally, Promiteo transforms an ordinary night into something personal and unforgettable.
+                                </Typography>
+                                <Typography component={'p'} variant={'body2'}>
+                                    Inside, you’ll find more than products — you’ll find possibilities.
+                                    Each item is selected to guide, not dictate. To suggest, not impose.
+                                </Typography>
 
-                            <Typography component={'p'} variant={'h4'}
-                                        sx={{
-                                            color: palette.gold,
-                                            margin:'20px 0'
-                                        }}
+                                <Typography component={'p'} variant={'body2'}>
+                                    No instructions.
+                                </Typography>
+
+                                <Typography component={'p'} variant={'body2'}>
+                                    No rules.
+                                </Typography>
+
+                                <Typography component={'p'} variant={'body2'}>
+                                    Only the freedom to explore at your own rhythm.
+                                </Typography>
+                                <LinkBtn href={'/BoxSeriesOne'}>Discover Inside</LinkBtn>
+
+                                {/*<List>*/}
+                                {/*    {aboutBoxList.map((item, i) => {*/}
+                                {/*        const Icon = aboutIcons[i];*/}
+                                {/*        return (*/}
+                                {/*    <ListItem key={item.name+i}>*/}
+                                {/*        <Grid container alignItems="center">*/}
+                                {/*            <Grid item xs={2} md={2}*/}
+                                {/*            sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>*/}
+                                {/*                <IconWrapper>*/}
+                                {/*                    <Icon sx={(theme) => ({*/}
+                                {/*                        fontSize: '30px',*/}
+
+                                {/*                        [theme.breakpoints.up('md')]: {*/}
+                                {/*                            fontSize: '40px',*/}
+                                {/*                        },*/}
+                                {/*                    })}/>*/}
+                                {/*                </IconWrapper>*/}
+                                {/*            </Grid>*/}
+
+                                {/*            <Grid item xs={10} md={10}>*/}
+                                {/*                <ListItemText*/}
+                                {/*                    primary={item.name}*/}
+                                {/*                    secondary={item.description}*/}
+                                {/*                    primaryTypographyProps={{*/}
+                                {/*                        fontSize: 30,*/}
+                                {/*                        color: "white",*/}
+                                {/*                    }}*/}
+                                {/*                    secondaryTypographyProps={{*/}
+                                {/*                        fontSize: 16,*/}
+                                {/*                        color: "#dddddd",*/}
+                                {/*                    }}*/}
+                                {/*                />*/}
+                                {/*            </Grid>*/}
+                                {/*        </Grid>*/}
+                                {/*    </ListItem>*/}
+                                {/*    )})}*/}
+
+                                {/*</List>*/}
+                            </Grid>
+                            <Grid item sm={6}
+                                  // style={{clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)"}}
                             >
-                                No instructions.
-                            </Typography>
+                                <BoxImage src={boxImage} alt='boxImage'/>
+                            </Grid>
 
-                            <Typography component={'p'} variant={'h4'}
-                                        sx={{
-                                            color: palette.gold,
-                                            margin:'20px 0'
-                                        }}
-                            >
-                                No rules.
-                            </Typography>
-
-                            <Typography component={'p'} variant={'h3'}
-                                        sx={{
-                                            color: palette.gold,
-                                            margin:'20px 0'
-                                        }}
-                            >
-                                Only the freedom to explore at your own rhythm.
-                            </Typography>
-
-                            {/*<List>*/}
-                            {/*    {aboutBoxList.map((item, i) => {*/}
-                            {/*        const Icon = aboutIcons[i];*/}
-                            {/*        return (*/}
-                            {/*    <ListItem key={item.name+i}>*/}
-                            {/*        <Grid container alignItems="center">*/}
-                            {/*            <Grid item xs={2} md={2}*/}
-                            {/*            sx={{display: "flex", alignItems:"center", justifyContent:"center",padding:'0 10px 0 0'}}>*/}
-                            {/*                <IconWrapper>*/}
-                            {/*                    <Icon sx={(theme) => ({*/}
-                            {/*                        fontSize: '30px',*/}
-
-                            {/*                        [theme.breakpoints.up('md')]: {*/}
-                            {/*                            fontSize: '40px',*/}
-                            {/*                        },*/}
-                            {/*                    })}/>*/}
-                            {/*                </IconWrapper>*/}
-                            {/*            </Grid>*/}
-
-                            {/*            <Grid item xs={10} md={10}>*/}
-                            {/*                <ListItemText*/}
-                            {/*                    primary={item.name}*/}
-                            {/*                    secondary={item.description}*/}
-                            {/*                    primaryTypographyProps={{*/}
-                            {/*                        fontSize: 30,*/}
-                            {/*                        color: "white",*/}
-                            {/*                    }}*/}
-                            {/*                    secondaryTypographyProps={{*/}
-                            {/*                        fontSize: 16,*/}
-                            {/*                        color: "#dddddd",*/}
-                            {/*                    }}*/}
-                            {/*                />*/}
-                            {/*            </Grid>*/}
-                            {/*        </Grid>*/}
-                            {/*    </ListItem>*/}
-                            {/*    )})}*/}
-
-                            {/*</List>*/}
                         </Grid>
-                        <Grid item sm={6} style={{
-                            clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)"}}>
-                            <BoxImage src={boxImage} alt='boxImage'/>
-                        </Grid>
-
-                    </Grid>
+                    {/*</Container>*/}
                 </ProductSection>
             {/*</Container>*/}
             <Line/>

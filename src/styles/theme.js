@@ -4,7 +4,7 @@ import palette from '../styles/palette';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'inherit',
+    fontFamily: "Poppins, sans-serif",
     color:palette.mainTextColor,
 
     h1: {

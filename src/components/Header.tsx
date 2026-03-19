@@ -23,7 +23,7 @@ import {useTranslation} from "../i18n/useTranslation";
 
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['About Us', 'Products', 'Reviews', 'Contacts'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -42,6 +42,13 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
         padding: "5px 0",
         boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
     },
+}));
+
+const LanguageBtn = styled(Button)(({ theme }) => ({
+    color:'white',
+    borderRadius: 0,
+    fontWeight: 400,
+
 }));
 
 function ResponsiveAppBar() {
@@ -100,20 +107,27 @@ function ResponsiveAppBar() {
                     </Box>
                     <Box sx={{display:'flex'}}>
 
-                        <Button onClick={(e) =>  i18n.changeLanguage("en")}>
-                            <ReactCountryFlag
-                                countryCode="GB"
-                                svg
-                                style={{ width: "1.5em", height: "1.5em" }}
-                            />
-                        </Button>
-                        <Button onClick={(e) =>  i18n.changeLanguage("es")}>
-                            <ReactCountryFlag
-                                countryCode="ES"
-                                svg
-                                style={{ width: "1.5em", height: "1.5em" }}
-                            />
-                        </Button>
+                        <LanguageBtn onClick={(e) =>  i18n.changeLanguage("en")}
+                                sx={{
+                                    borderRight:'1px solid white',
+                                }}
+                        >
+                            {/*<ReactCountryFlag*/}
+                            {/*    countryCode="GB"*/}
+                            {/*    svg*/}
+                            {/*    style={{ width: "1.5em", height: "1.5em" }}*/}
+                            {/*/>*/}
+                            EN
+                        </LanguageBtn>
+                        <LanguageBtn onClick={(e) =>  i18n.changeLanguage("es")}
+                        >
+                            {/*<ReactCountryFlag*/}
+                            {/*    countryCode="ES"*/}
+                            {/*    svg*/}
+                            {/*    style={{ width: "1.5em", height: "1.5em" }}*/}
+                            {/*/>*/}
+                            ES
+                        </LanguageBtn>
                         <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
                             <IconButton
                                 size="large"
