@@ -19,18 +19,14 @@ const theme = createTheme({
         fontSize: '48px',
       },
     },
-    title: {
-      fontWeight: 600,
-      fontSize: 36,
-      lineHeight: '36px',
-    },
+
     h2: {
-      fontWeight: 500,
+      fontWeight: 400,
       fontSize: 40,
       lineHeight: '36px',
       // letterSpacing: '-0.3px',
       '@media (min-width: 1440px)': {
-        fontSize: 20,
+        fontSize: 40,
         lineHeight: '28px',
       },
     },
@@ -81,6 +77,11 @@ const theme = createTheme({
         fontSize: 15,
         lineHeight: '22px',
       },
+    },
+    title: {
+      fontWeight: 600,
+      fontSize: 36,
+      lineHeight: '36px',
     },
     body1: {
       fontSize: 17,

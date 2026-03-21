@@ -12,6 +12,10 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BrushIcon from '@mui/icons-material/Brush';
 import DiamondIcon from '@mui/icons-material/Diamond';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LockIcon from '@mui/icons-material/Lock';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 import palette from '../styles/palette';
 
@@ -24,34 +28,34 @@ import Container from "@mui/material/Container";
 
 const aboutBoxList = [
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        name:'Carefully Selected Experience',
+        description:'Not just products — a curated experience designed for connection and pleasure.',
         icon: CardGiftcardIcon
     },
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: VerifiedIcon
+        name:'Premium Quality Only',
+        description:'We choose only high-quality, trusted products — no compromises.',
+        icon: WorkspacePremiumIcon
     },
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: LocalShippingIcon
+        name:'Designed for Real Moments',
+        description:'Created to enhance intimacy, connection, and unforgettable nights.',
+        icon: FavoriteIcon
     },
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: BrushIcon
+        name:'Ready-to-Gift Concept',
+        description:'Beautifully packaged — perfect for surprising your partner instantly.',
+        icon: CelebrationIcon
     },
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: DiamondIcon
+        name:'Discreet & Private',
+        description:'Your privacy matters. Neutral packaging and secure delivery.',
+        icon: LockIcon
     },
     {
-        name:'Заголовок пункта',
-        description:'Описание пункта. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        icon: DiamondIcon
+        name:'No Awkward Shopping',
+        description:'Everything you need — in one elegant box. No stress, no confusion.',
+        icon: ShoppingBagIcon
     }
 ];
 
@@ -99,12 +103,9 @@ const IconWrapper = styled("div")(({ theme }) => ({
 const Title = styled('h2')(({ theme }) => ({
     width:'100%',
     textAlign:'center',
-    fontSize:'38px',
     color:palette.mainTextColor,
 
-    [theme.breakpoints.up('md')]: {
-        fontSize:'3.5rem',
-    },
+
 }));
 
 const ForCustomerBlock = () => {
@@ -130,7 +131,7 @@ const ForCustomerBlock = () => {
                         <Grid item sm={12}
                         >
                             <Title>
-                                Advantages
+                                More Than Just a Box
                             </Title>
                             <Grid container>
 
