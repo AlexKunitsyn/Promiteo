@@ -9,6 +9,13 @@ import item1 from '../images/1item.png';
 import item2 from '../images/2item.png';
 import item3 from '../images/3item.png';
 import item4 from '../images/4item.png';
+import item5 from '../images/5item.png';
+import item6 from '../images/6item.png';
+import item7 from '../images/7item.png';
+import item8 from '../images/8item.png';
+import item9 from '../images/9item.png';
+import item10 from '../images/10item.png';
+import item11 from '../images/11item.png';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
@@ -42,12 +49,37 @@ const productList = [
     {
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item1
+        image: item5
     },
     {
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item2
+        image: item6
+    },
+    {
+        name:'Item Name',
+        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        image: item11
+    },
+    {
+        name:'Item Name',
+        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        image: item7
+    },
+    {
+        name:'Item Name',
+        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        image: item8
+    },
+    {
+        name:'Item Name',
+        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        image: item9
+    },
+    {
+        name:'Item Name',
+        description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
+        image: item10
     },
 ];
 
