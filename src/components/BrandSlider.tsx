@@ -6,23 +6,43 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Line from "@components/Line";
+import Image from 'next/image';
 
-import Aurelia from '../images/aurelia.svg';
-import Calis from '../images/calis.svg';
-import Elan from '../images/elan.svg';
-import Lumera from '../images/lumera.svg';
-import Noxe from '../images/noxe.svg';
-import Oren from '../images/oren.svg';
-import Seria from '../images/seria.svg';
-import VeraVong from '../images/veraVong.svg';
+// import Aurelia from '../images/aurelia.svg';
+// import Calis from '../images/calis.svg';
+// import Elan from '../images/elan.svg';
+// import Lumera from '../images/lumera.svg';
+// import Noxe from '../images/noxe.svg';
+// import Oren from '../images/oren.svg';
+// import Seria from '../images/seria.svg';
+// import VeraVong from '../images/veraVong.svg';
+
+import durex from '../images/brands/durex.jpg';
+import shunga from '../images/brands/shunga.svg';
+import Shunga from '../images/brands/shunga.svg';
+import sf from '../images/brands/sf.png';
+import tenga from '../images/brands/tenga.svg';
+import Tenga from '../images/brands/tenga.svg';
+import jo from '../images/brands/jo.webp';
+import orgie from '../images/brands/orgie.webp';
+import pjur from '../images/brands/pjur.svg';
+import Pjur from '../images/brands/pjur.svg';
+import DurexLogo from '../images/brands/DurexLogo.svg';
 
 const Slide = styled('div')(({ theme }) => ({
     width:"200px",
-    height:"100px",
+    height:"140px",
     display:'flex',
     alignItems:'center',
     justifyContent:'center',
     padding:'20px 40px',
+    '& img':{
+        minWidth:'200px',
+        width:'100%',
+        height:'100px',
+        objectFit:'contain',
+        opacity:"0.7"
+    },
     '& svg':{
         minWidth:'200px',
         width:'100%',
@@ -90,29 +110,35 @@ const BrandSlider = () => {
             <div className="slider-container">
                 <Slider {...sliderSettings}>
                     <Slide>
-                        <Aurelia/>
+                        {/*<Image src={durex} alt={'durex'}/>*/}
+                        <DurexLogo/>
                     </Slide>
                     <Slide>
-                        <Calis/>
+                        {/*<Image src={shunga} alt={'shunga'}/>*/}
+                        <Shunga/>
                     </Slide>
                     <Slide>
-                        <Elan/>
+                        <Image src={sf} alt={'sf'}/>
+                        {/*<Sf/>*/}
                     </Slide>
                     <Slide>
-                        <Lumera/>
+                        <Tenga/>
                     </Slide>
                     <Slide>
-                        <Noxe/>
+                        <Image src={jo} alt={'jo'}/>
+                        {/*<Jo/>*/}
                     </Slide>
                     <Slide>
-                        <Oren/>
+                        <Image src={orgie} alt={'orgie'}/>
+                        {/*<Orgie/>*/}
                     </Slide>
                     <Slide>
-                        <Seria/>
+                        {/*<Image src={pjur} alt={'Pjur'}/>*/}
+                        <Pjur/>
                     </Slide>
-                    <Slide>
-                        <VeraVong/>
-                    </Slide>
+                    {/*<Slide>*/}
+                    {/*    <VeraVong/>*/}
+                    {/*</Slide>*/}
                 </Slider>
             </div>
             <Line/>

@@ -62,7 +62,7 @@ const aboutBoxList = [
 
 
 const ProductSection = styled(Box)(({ theme }) => ({
-    minHeight:'100vh',
+    minHeight:'65vh',
     // background: 'linear-gradient(38deg,rgba(10, 10, 10, 0.78) 78%, rgba(249, 204, 61, 1) 100%)'
     // background:'#0e0e12',
     color:palette.mainTextColor,
@@ -128,13 +128,11 @@ const ForCustomerBlock = () => {
             <Container maxWidth="xl" sx={{position:'relative'}}>
                 <ProductSection sx={{ textAlign: 'center', }} style={{display:'flex'}} className="second-screen" id="next">
                     <Grid container >
-                        <Grid item sm={12}
-                        >
+                        <Grid item sm={12}>
                             <Title>
                                 More Than Just a Box
                             </Title>
                             <Grid container>
-
                                 {aboutBoxList.map((item, i) => {
                                     const Icon = item.icon;
                                     return (
@@ -163,9 +161,7 @@ const ForCustomerBlock = () => {
                                                 />
                                             </Grid>
                                         </Grid>
-
                                     )})}
-
                             </Grid>
                         </Grid>
 
