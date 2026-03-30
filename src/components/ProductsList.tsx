@@ -19,6 +19,7 @@ import item11 from '../images/11item.png';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
+import ProductModal from '../components/ProductModal';
 import Line from '../components/Line';
 
 
@@ -27,59 +28,79 @@ import Line from '../components/Line';
 
 const productList = [
     {
+        id:'product1',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item1
+        image: item1,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product2',
         name:'Irem Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item2
+        image: item2,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product3',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item3
+        image: item3,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product4',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item4
+        image: item4,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product4',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item5
+        image: item5,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product5',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item6
+        image: item6,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product6',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item11
     },
     {
+        id:'product7',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item7
+        image: item7,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product8',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
         image: item8
     },
     {
+        id:'product9',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item9
+        image: item9,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
     {
+        id:'product10',
         name:'Item Name',
         description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
-        image: item10
+        image: item10,
+        fullDescription: 'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry, '
     },
 ];
 
@@ -169,6 +190,14 @@ const Title = styled('h2')(({ theme }) => ({
 
 
 const ProductBlock = () => {
+    const [open, setOpen] = React.useState(false);
+    const [product, setProduct] = React.useState(false);
+
+    const handleClickOpen = (item) => {
+        setOpen(item.id);
+        setProduct(item)
+    };
+
     return (
         <Box
             sx={{
@@ -203,7 +232,7 @@ const ProductBlock = () => {
                             {productList.map((item, i) => {
                                 return (
                                     <ProductContainer item xs={12} md={4} key={item.name+i}>
-                                        <Content>
+                                        <Content onClick={(e)=>handleClickOpen(item)}>
                                             <ParallaxImage src={item.image}/>
                                             {/*<ProductImage src={item.image} alt={'img'}/>*/}
                                             <ProductTitle className={'productTitle'}>
@@ -216,16 +245,15 @@ const ProductBlock = () => {
 
                                             </ProductTitle>
                                         </Content>
-
                                     </ProductContainer>
                                 )})}
                         </Grid>
-
-
                     </Grid>
                 </ProductsSection>
+                <ProductModal/>
             </Container>
             {/*<Line/>*/}
+            <ProductModal open={open} setOpen={setOpen} item={product}/>
         </Box>
     );
 }

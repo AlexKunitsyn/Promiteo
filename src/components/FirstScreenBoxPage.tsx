@@ -98,7 +98,7 @@ const HeroTitle  = styled('h1')(({ theme }) => ({
     color:'rgba(255,255,255, 0.7)',
     margin:'0 0 20px',
     padding: 0,
-    fontWeight: 700,
+    fontWeight: 100,
     // opacity: 0,
     // animation: `${fadeUp} 1.6s ease-out forwards`,
     // animationDelay: "1.3s",
