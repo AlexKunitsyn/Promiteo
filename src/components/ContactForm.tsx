@@ -158,86 +158,88 @@ const SubmitButton = styled(Button)({
             <Line/>
             <Section>
 
-                <FormWrapper component="form" onSubmit={handleSubmit}>
-                    <Stack spacing={3}>
-                        {/* Header */}
-                        <div>
-                            <Typography variant="h5" gutterBottom>
-                                Get in touch
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.7 }}>
-                                Leave your details and message — we’ll get back to you shortly.
-                            </Typography>
-                        </div>
+                <FormWrapper component="form">
+                    <form onSubmit={handleSubmit}>
+                        <Stack spacing={3}>
+                            {/* Header */}
+                            <div>
+                                <Typography variant="h5" gutterBottom>
+                                    Get in touch
+                                </Typography>
+                                <Typography variant="body2" sx={{ opacity: 0.7 }}>
+                                    Leave your details and message — we’ll get back to you shortly.
+                                </Typography>
+                            </div>
 
-                        {/* First / Last name */}
-                        <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
-                            spacing={2}
-                        >
+                            {/* First / Last name */}
+                            <Stack
+                                direction={{ xs: 'column', sm: 'row' }}
+                                spacing={2}
+                            >
+                                <StyledInput
+                                    fullWidth
+                                    label="First name"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
+                                />
+                                <StyledInput
+                                    fullWidth
+                                    label="Last name"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
+                                />
+                            </Stack>
+
+                            {/* Phone */}
                             <StyledInput
                                 fullWidth
-                                label="First name"
-                                name="firstName"
-                                value={formData.firstName}
+                                label="Phone"
+                                type="tel"
+                                name="phone"
+                                value={formData.phone}
                                 onChange={handleChange}
                             />
+
+                            {/* Email */}
                             <StyledInput
                                 fullWidth
-                                label="Last name"
-                                name="lastName"
-                                value={formData.lastName}
+                                label="Email"
+                                type="email"
+                                name="email"
+                                value={formData.email}
                                 onChange={handleChange}
                             />
+
+                            {/* Message */}
+                            <StyledInput
+                                fullWidth
+                                label="Message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                multiline
+                                rows={4}
+                            />
+
+                            {/* Submit */}
+                            <SubmitButton fullWidth type="submit" disabled={loading}>
+                                {loading ? 'Sending...' : 'Send message'}
+                            </SubmitButton>
+                            {success && (
+                                <Typography variant="body2" sx={{ mt: 2 }}>
+                                    Message sent successfully.
+                                </Typography>
+                            )}
+
+                            {error && (
+                                <Typography variant="body2" sx={{ mt: 2 }}>
+                                    {error}
+                                </Typography>
+                            )}
                         </Stack>
-
-                        {/* Phone */}
-                        <StyledInput
-                            fullWidth
-                            label="Phone"
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                        />
-
-                        {/* Email */}
-                        <StyledInput
-                            fullWidth
-                            label="Email"
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-
-                        {/* Message */}
-                        <StyledInput
-                            fullWidth
-                            label="Message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            multiline
-                            rows={4}
-                        />
-
-                        {/* Submit */}
-                        <SubmitButton fullWidth type="submit" disabled={loading}>
-                            {loading ? 'Sending...' : 'Send message'}
-                        </SubmitButton>
-                        {success && (
-                            <Typography variant="body2" sx={{ mt: 2 }}>
-                                Message sent successfully.
-                            </Typography>
-                        )}
-
-                        {error && (
-                            <Typography variant="body2" sx={{ mt: 2 }}>
-                                {error}
-                            </Typography>
-                        )}
-                    </Stack>
+                    </form>
                 </FormWrapper>
             </Section>
         </Box>
