@@ -158,7 +158,7 @@ const SubmitButton = styled(Button)({
             <Line/>
             <Section>
 
-                <FormWrapper component="form">
+                <FormWrapper>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={3}>
                             {/* Header */}
