@@ -115,6 +115,20 @@ const REVIEWS = [
     },
 ];
 
+
+const Title = styled('h2')(({ theme }) => ({
+    width:'100%',
+    textAlign:'center',
+    fontSize:'40px',
+    fontWeight:'500',
+    margin:'0 0 30px',
+    color:palette.mainTextColor,
+
+    [theme.breakpoints.up('md')]: {
+        fontSize:'3.5rem',
+    },
+}));
+
 /* ---------------- component ---------------- */
 
 const ReviewsSlider =() => {
@@ -157,17 +171,6 @@ const ReviewsSlider =() => {
     };
 
     const sliderSettings = isMobile ? settings : settings2;
-    const Title = styled('h2')(({ theme }) => ({
-        width:'100%',
-        textAlign:'center',
-        fontSize:'38px',
-        color:palette.mainTextColor,
-        margin:'0 0 30px',
-
-        [theme.breakpoints.up('md')]: {
-            fontSize:'3.5rem',
-        },
-    }));
 
     return (
         <Box>

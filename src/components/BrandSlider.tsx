@@ -41,15 +41,25 @@ const Slide = styled('div')(({ theme }) => ({
         width:'100%',
         height:'100px',
         objectFit:'contain',
-        opacity:"0.7"
+        // opacity:"0.7",
+        filter: 'grayscale(100%)',
+        transition: '0.3s',
+        '&:hover': {
+            filter: 'grayscale(0%)',
+        },
     },
     '& svg':{
         minWidth:'200px',
         width:'100%',
         height:'100px',
         objectFit:'contain',
-        opacity:"0.7"
-    }
+        filter: 'grayscale(100%)',
+        transition: '0.3s',
+        // opacity:"0.7"
+        '&:hover': {
+            filter: 'grayscale(0%)',
+        },
+    },
 }));
 
 const SliderContainer = styled(Box)(({ theme }) => ({

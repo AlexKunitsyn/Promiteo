@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import ageReducer from './slices/ageSlice';
 import languageReducer from './slices/languageSlice';
+import contactReducer from './slices/contactSlice';
 
 export const store = configureStore({
     reducer: {
         age: ageReducer,
         language: languageReducer,
+        contact: contactReducer,
     },
 });
 

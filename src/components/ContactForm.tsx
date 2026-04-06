@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     TextField,
     Button,
@@ -8,6 +8,11 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Line from "@components/Line";
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import {
+    submitContactForm,
+    resetContactState,
+} from '../redux/slices/contactSlice';
 
 /* ---------- styles ---------- */
 
@@ -20,7 +25,7 @@ const Section = styled('section')({
     background: 'radial-gradient(ellipse at center, #3b2f5f 0%,    #2f254f 22%,    #241d40 40%,    #19152f 60%,    #120f22 80%,    #0b0916 100%)',
 });
 
-const FormWrapper = styled('div')({
+const FormWrapper = styled(Box)({
     width: '100%',
     maxWidth: 680,
     padding: 40,
@@ -105,12 +110,55 @@ const SubmitButton = styled(Button)({
 /* ---------- component ---------- */
 
  const ContactForm = () => {
+
+     const dispatch = useAppDispatch();
+     const { loading, success, error } = useAppSelector((state) => state.contact);
+
+     const [formData, setFormData] = useState({
+         firstName: '',
+         lastName: '',
+         phone: '',
+         email: '',
+         message: '',
+     });
+
+     const handleChange = (
+         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+     ) => {
+         const { name, value } = e.target;
+
+         setFormData((prev) => ({
+             ...prev,
+             [name]: value,
+         }));
+
+         if (success || error) {
+             dispatch(resetContactState());
+         }
+     };
+
+     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+         e.preventDefault();
+
+         const resultAction = await dispatch(submitContactForm(formData));
+
+         if (submitContactForm.fulfilled.match(resultAction)) {
+             setFormData({
+                 firstName: '',
+                 lastName: '',
+                 phone: '',
+                 email: '',
+                 message: '',
+             });
+         }
+     };
+
     return (
         <Box>
             <Line/>
             <Section>
 
-                <FormWrapper>
+                <FormWrapper component="form" onSubmit={handleSubmit}>
                     <Stack spacing={3}>
                         {/* Header */}
                         <div>
@@ -130,10 +178,16 @@ const SubmitButton = styled(Button)({
                             <StyledInput
                                 fullWidth
                                 label="First name"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
                             />
                             <StyledInput
                                 fullWidth
                                 label="Last name"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
                             />
                         </Stack>
 
@@ -142,6 +196,9 @@ const SubmitButton = styled(Button)({
                             fullWidth
                             label="Phone"
                             type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
                         />
 
                         {/* Email */}
@@ -149,20 +206,37 @@ const SubmitButton = styled(Button)({
                             fullWidth
                             label="Email"
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                         />
 
                         {/* Message */}
                         <StyledInput
                             fullWidth
                             label="Message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
                             multiline
                             rows={4}
                         />
 
                         {/* Submit */}
-                        <SubmitButton fullWidth>
-                            Send message
+                        <SubmitButton fullWidth type="submit" disabled={loading}>
+                            {loading ? 'Sending...' : 'Send message'}
                         </SubmitButton>
+                        {success && (
+                            <Typography variant="body2" sx={{ mt: 2 }}>
+                                Message sent successfully.
+                            </Typography>
+                        )}
+
+                        {error && (
+                            <Typography variant="body2" sx={{ mt: 2 }}>
+                                {error}
+                            </Typography>
+                        )}
                     </Stack>
                 </FormWrapper>
             </Section>
