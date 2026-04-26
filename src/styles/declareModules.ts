@@ -1,9 +1,12 @@
-import { createTheme } from '@mui/material/styles';
+import '@mui/material/styles';
 import React from 'react';
-import { splitDivider } from './palette';
 
 declare module '@mui/material/styles' {
+  // Регистрация кастомных вариантов типографики для темы Promiteo
   interface TypographyVariants {
+    h5Bold: React.CSSProperties;
+    title: React.CSSProperties;
+    body1Bold: React.CSSProperties;
     body3: React.CSSProperties;
     body4: React.CSSProperties;
     subtitle3: React.CSSProperties;
@@ -11,29 +14,90 @@ declare module '@mui/material/styles' {
     subtitle5: React.CSSProperties;
     caption2: React.CSSProperties;
     caption3: React.CSSProperties;
-    h5Bold: React.CSSProperties;
-    body1Bold: React.CSSProperties;
     overline1: React.CSSProperties;
-    title: React.CSSProperties;
   }
 
+  // Опции для функции createTheme (делаем поля необязательными)
   interface TypographyVariantsOptions {
-    body3: React.CSSProperties;
-    body4: React.CSSProperties;
-    subtitle3: React.CSSProperties;
-    subtitle4: React.CSSProperties;
-    subtitle5: React.CSSProperties;
-    caption2: React.CSSProperties;
-    caption3: React.CSSProperties;
-    h5Bold: React.CSSProperties;
-    body1Bold: React.CSSProperties;
-    overline1: React.CSSProperties;
-    title: React.CSSProperties;
+    h5Bold?: React.CSSProperties;
+    title?: React.CSSProperties;
+    body1Bold?: React.CSSProperties;
+    body3?: React.CSSProperties;
+    body4?: React.CSSProperties;
+    subtitle3?: React.CSSProperties;
+    subtitle4?: React.CSSProperties;
+    subtitle5?: React.CSSProperties;
+    caption2?: React.CSSProperties;
+    caption3?: React.CSSProperties;
+    overline1?: React.CSSProperties;
+  }
+
+  // Расширение палитры под структуру проекта
+  interface Palette {
+    mainTextColor: string;
+    gray: string;
+    mainColor: string;
+    secondaryDark: string;
+    blackMain: string;
+    yellow: string;
+    green: string;
+    splitDivider: string;
+    lightGreen: string;
+    darkGray: string;
+    currencyRow: string;
+    contrastGray: string;
+    activeCategoryNotification: string;
+    contractorRow: string;
+    contractRow: string;
+    secondaryGray: string;
+    errorText: string;
+    consumptionColor: string;
+    tableHeader: string;
+    darkGrey: string;
+    greyButton: string;
+    orange: string;
+    darkGreyColor: string;
+    border: {
+      primary: string;
+    };
+  }
+
+  interface PaletteOptions {
+    mainTextColor?: string;
+    gray?: string;
+    mainColor?: string;
+    secondaryDark?: string;
+    blackMain?: string;
+    yellow?: string;
+    green?: string;
+    splitDivider?: string;
+    lightGreen?: string;
+    darkGray?: string;
+    currencyRow?: string;
+    contrastGray?: string;
+    activeCategoryNotification?: string;
+    contractorRow?: string;
+    contractRow?: string;
+    secondaryGray?: string;
+    errorText?: string;
+    consumptionColor?: string;
+    tableHeader?: string;
+    darkGrey?: string;
+    greyButton?: string;
+    orange?: string;
+    darkGreyColor?: string;
+    border?: {
+      primary?: string;
+    };
   }
 }
 
+// Позволяет использовать кастомные варианты в пропсе variant компонента Typography
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
+    h5Bold: true;
+    title: true;
+    body1Bold: true;
     body3: true;
     body4: true;
     subtitle3: true;
@@ -41,60 +105,11 @@ declare module '@mui/material/Typography' {
     subtitle5: true;
     caption2: true;
     caption3: true;
-    h5Bold: true;
-    body1Bold: true;
     overline1: true;
-    title: true;
-  }
-}
-
-declare module '@mui/material/styles' {
-  interface Palette {
-    button: {
-      primary: Palette['primary'];
-      secondary: Palette['primary'];
-    };
-    gray: React.CSSProperties['color'];
-    mainColor: React.CSSProperties['color'];
-    secondaryDark: React.CSSProperties['color'];
-    blackMain: React.CSSProperties['color'];
-    yellow: React.CSSProperties['color'];
-    green: React.CSSProperties['color'];
-    splitDivider: React.CSSProperties['color'];
-    lightGreen: React.CSSProperties['color'];
-    darkGray: React.CSSProperties['color'];
-    currencyRow: React.CSSProperties['color'];
-    contrastGray: React.CSSProperties['color'];
-    activeCategoryNotification: React.CSSProperties['color'];
-    contractorRow: React.CSSProperties['color'];
-    contractRow: React.CSSProperties['color'];
-    secondaryGray: React.CSSProperties['color'];
-    errorText: React.CSSProperties['color'];
-    consumptionColor: React.CSSProperties['color'];
-    tableHeader: React.CSSProperties['color'];
-    darkGrey: React.CSSProperties['color'];
-    greyButton: React.CSSProperties['color'];
-    orange: React.CSSProperties['color'];
-    darkGreyColor: React.CSSProperties['color'];
-    border: {
-      primary: React.CSSProperties['color'];
-    };
-  }
-
-  // allow configuration using `createTheme`
-  interface PaletteOptions {
-    button?: {
-      primary: PaletteOptions['primary'];
-      secondary: PaletteOptions['primary'];
-    };
   }
 }
 
 declare module '@mui/material/Button' {
-  interface ButtonPropsVariantOverrides {
-    textTransform: true;
-  }
-
   interface ButtonPropsColorOverrides {
     red: true;
   }

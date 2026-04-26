@@ -1,67 +1,57 @@
-import { Provider } from 'react-redux';
-import { ThemeProvider } from '@mui/material';
-// import CssBaseline from '@mui/material/CssBaseline';
+import React from 'react';
+import Head from 'next/head';
 import { AppProps } from 'next/app';
-import { store } from '@redux/store';
-import theme from '../styles/theme';
-import '../styles/global.css';
-// import { Playfair_Display, Inter } from 'next/font/google';
+import { Provider } from 'react-redux';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { Poppins } from 'next/font/google';
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Intro from '../components/Intro'
-import { LanguageProvider } from "../i18n/LanguageProvider";
-import Preloader from "@components/Preloader";
-import React, {useEffect, useState} from "react";
-import Head from "next/head";
 
-// const playfair = Playfair_Display({
-//     subsets: ['latin'],
-//     weight: ['400', '500', '700', '900'],
-//     variable: '--font-playfair'
-// });
-//
-// const inter = Inter({
-//     subsets: ['latin'],
-//     weight: ['300', '400', '500', '600'],
-//     variable: '--font-inter'
-// });
+// Ваши кастомные импорты по структуре проекта
+import { store } from '../redux/store';
+import theme from '../styles/theme';
+import { LanguageProvider } from "../i18n/LanguageProvider";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Preloader from "../components/Preloader";
+
+// Глобальные стили импортируем ПОСЛЕ MUI компонентов (в связке с injectFirst это даст им приоритет)
+import '../styles/global.css';
 
 const poppins = Poppins({
     subsets: ['latin'],
-    weight: [
-        '100','200','300','400','500','600','700','800','900'
-    ],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
     style: ['normal', 'italic'],
+    display: 'swap',
 });
 
-
-
- const MyApp =({ Component, pageProps }: AppProps) => {
-
+const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
         <Provider store={store}>
             <LanguageProvider>
-                <ThemeProvider theme={theme}>
-                    {/*<CssBaseline />*/}
-                    <Head>
-                        <link rel="icon" href="/favicon.svg" />
-                    </Head>
-                    <main className={poppins.className}>
-                        <Preloader />
+                {/* StyledEngineProvider с injectFirst — решение вашей проблемы со "слетающими" стилями */}
+                <StyledEngineProvider injectFirst>
+                    <ThemeProvider theme={theme}>
+                        <Head>
+                            <title>Promiteo</title>
+                            <meta name="viewport" content="initial-scale=1, width=device-width" />
+                            <link rel="icon" href="/favicon.svg" />
+                        </Head>
 
-                        {/*<Intro/>*/}
-                        <Header/>
-                        <Component {...pageProps} />
-                        <Footer/>
+                        {/* Теперь CssBaseline можно включить: он нормализует базу,
+                            но ваши стили из global.css будут иметь приоритет */}
+                        <CssBaseline />
 
-
-
-                    </main>
-                </ThemeProvider>
+                        <main className={poppins.className}>
+                            <Preloader />
+                            <Header />
+                            <Component {...pageProps} />
+                            <Footer />
+                        </main>
+                    </ThemeProvider>
+                </StyledEngineProvider>
             </LanguageProvider>
         </Provider>
     );
 }
 
-export default MyApp
+export default MyApp;

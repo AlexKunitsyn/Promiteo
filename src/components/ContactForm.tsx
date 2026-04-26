@@ -157,11 +157,9 @@ const SubmitButton = styled(Button)({
         <Box>
             <Line/>
             <Section>
-
                 <FormWrapper>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={3}>
-                            
                             <div>
                                 <Typography variant="h5" gutterBottom>
                                     Get in touch

@@ -11,6 +11,7 @@ import ReviewsSlider from '@components/ReviewsSlider';
 import ContactForm from '@components/ContactForm';
 import Preloader from '@components/Preloader';
 import FirstScreenBlock from '@components/FirstScreenBlock';
+import HowItWorks from '@components/HowItWorks';
 import { useAppSelector } from '@redux/hooks';
 
 import palette from '../styles/palette';
@@ -46,6 +47,7 @@ const Home = () => {
             <BrandSlider/>
             <ForCustomerBlock/>
             {/*<WhoNeedThis/>*/}
+            <HowItWorks/>
 
             <ReviewsSlider/>
             <ContactForm/>
