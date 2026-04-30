@@ -81,13 +81,13 @@ const BoxImage = styled(Image)(({ theme }) => ({
 const Title = styled('h2')(({ theme }) => ({
     width:'100%',
     textAlign:'center',
-    fontSize:'40px',
+    // fontSize:'40px',
     fontWeight:'500',
     margin:'0 0 30px',
     color:palette.mainTextColor,
 
     [theme.breakpoints.up('md')]: {
-        fontSize:'3.5rem',
+        // fontSize:'3.5rem',
     },
 }));
 
@@ -151,7 +151,7 @@ const ProductBlock = () => {
 
     return (
         <Box
-            // className="bg-block bg-noise bg-variant-purple"
+            className="bg-block bg-noise bg-variant-purple"
         >
             {/*<Container maxWidth="xl">*/}
                 <ProductSection className="second-screen" id="next">
@@ -169,23 +169,23 @@ const ProductBlock = () => {
                                     {/*{t("WhatIsPromiteoBox")}*/}
                                     A Private Ritual
                                 </Title>
-                                <Typography component={'p'} variant={'body2'}>
+                                <Typography component={'p'} variant={'body1'}>
                                     Whether discovered in a hotel room or chosen intentionally, Promiteo transforms an ordinary night into something personal and unforgettable.
                                 </Typography>
-                                <Typography component={'p'} variant={'body2'}>
+                                <Typography component={'p'} variant={'body1'}>
                                     Inside, you’ll find more than products — you’ll find possibilities.
                                     Each item is selected to guide, not dictate. To suggest, not impose.
                                 </Typography>
 
-                                <Typography component={'p'} variant={'body2'}>
+                                <Typography component={'p'} variant={'body1'}>
                                     No instructions.
                                 </Typography>
 
-                                <Typography component={'p'} variant={'body2'}>
+                                <Typography component={'p'} variant={'body1'}>
                                     No rules.
                                 </Typography>
 
-                                <Typography component={'p'} variant={'body2'}>
+                                <Typography component={'p'} variant={'body1'}>
                                     Only the freedom to explore at your own rhythm.
                                 </Typography>
                                 <LinkBtn href={'/BoxSeriesOne'}>Discover Inside</LinkBtn>
@@ -231,6 +231,7 @@ const ProductBlock = () => {
                             </Grid>
                             <Grid item sm={6}
                                   // style={{clipPath: "polygon(8% 0%, 100% 0%, 100% 100%, 0 100%)"}}
+                                sx={{position:'relative', zIndex:'2'}}
                             >
                                 <BoxImage src={boxImage} alt='boxImage'/>
                             </Grid>

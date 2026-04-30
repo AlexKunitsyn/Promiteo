@@ -21,14 +21,14 @@ const themeOptions: ThemeOptions = {
     },
     // ОБНОВЛЕННЫЙ H2: Универсальный заголовок для блоков сайта
     h2: {
-      fontWeight: 600,
-      fontSize: '38px', // Базовый размер для мобильных устройств
+      fontWeight: 500,
+      fontSize: '46px', // Базовый размер для мобильных устройств
       lineHeight: 1.2,
       textAlign: 'center', // Центрирование как в вашем styled компоненте
       width: '100%',
       color: palette.mainTextColor, // Использование основного цвета текста из палитры
       '@media (min-width: 900px)': { // Адаптив для md и выше (аналог breakpoints.up('md'))
-        fontSize: '3.5rem',
+        fontSize: '40px'
       },
       '@media (min-width: 1440px)': {
         lineHeight: '1.1',
@@ -48,7 +48,7 @@ const themeOptions: ThemeOptions = {
     h5: {
       fontWeight: 400,
       fontSize: '22px',
-      lineHeight: '26px',
+      lineHeight: '38px',
     },
     h5Bold: {
       fontWeight: 600,
@@ -67,9 +67,9 @@ const themeOptions: ThemeOptions = {
       lineHeight: '36px',
     },
     body1: {
-      fontSize: '17px',
+      fontSize: '18px',
       lineHeight: '30px',
-      fontWeight: 400,
+      fontWeight: 300,
     },
     body1Bold: {
       fontSize: '17px',

@@ -15,6 +15,7 @@ import fireIcon from '../images/fireIcon.png';
 import MenuItem from "@mui/material/MenuItem";
 
 import ParallaxImage from '../components/ParallaxImage';
+import VerticalLine from '../components/VerticalLine';
 import Line from '../components/Line';
 
 
@@ -23,21 +24,22 @@ import Line from '../components/Line';
 
 const productList = [
     {
-        name:'Ignite.',
-        description:'Make the moment. Break the seal. Enjoy now, complete your experience upon checkout',
-        text:'',
-        image: fireIcon
-    },
-    {
-        name:'Explore.',
-        description:'Feel the touch. Unveil the materials and scents designed for your journey',
-        image: searchIcon
-    },
-    {
         name:'Discover',
         description:'Your night, curated. Use the code for a glimpse inside',
         image: phoneIcon
     },
+    {
+        name:'Explore',
+        description:'Feel the touch. Unveil the materials and scents designed for your journey',
+        image: searchIcon
+    },
+    {
+        name:'Ignite',
+        description:'Make the moment. Break the seal. Enjoy now, complete your experience upon checkout',
+        text:'',
+        image: fireIcon
+    },
+
     // {
     //     name:'Item Name',
     //     description:'Description. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, ',
@@ -75,6 +77,7 @@ const ProductImage = styled(Image)(({ theme }) => ({
 const ProductContainer = styled(Grid)(({ theme }) => ({
     // height:'70vh',
     padding:"15px",
+    position:'relative'
 
 }));
 const Content = styled(Box)(({ theme }) => ({
@@ -98,7 +101,7 @@ const ProductTitle = styled("div")(({ theme }) =>({
     position: 'relative',
     // bottom: 0,
     //
-    textAlign:'left',
+    textAlign:'center',
     width:"100%",
     // background:"rgba(0, 0, 0, 0.7)",
     padding: '20px 15px',
@@ -119,11 +122,23 @@ const ProductTitle = styled("div")(({ theme }) =>({
 const Title = styled('h2')(({ theme }) => ({
     width:'100%',
     textAlign:'center',
-    fontSize:'38px',
+    // fontSize:'38px',
     color:palette.mainTextColor,
 
     [theme.breakpoints.up('md')]: {
-        fontSize:'3.5rem',
+        // fontSize:'3.5rem',
+    },
+}));
+
+const Numbers = styled(Box)(({ theme }) => ({
+    width:'100%',
+    textAlign:'left',
+    fontSize:'38px',
+    fontWeight: 200,
+    color:'#d7be96',
+
+    [theme.breakpoints.up('md')]: {
+        // fontSize:'3.5rem',
     },
 }));
 
@@ -160,18 +175,33 @@ const HowItWorks = () => {
                             {productList.map((item, i) => {
                                 return (
                                     <ProductContainer item xs={12} md={4} key={item.name+i}>
-                                        <Typography variant="h3" component="h2"
-                                           >
+                                        <Box
+                                            sx={{
+                                                position:'absolute',
+                                                right:'0',
+                                                top:'50%',
+                                                transform:"translate(0, -50%)",
+                                                height:"100%"
+                                            }}
+                                        >
+                                            {i < productList.length-1 && <VerticalLine/>}
+                                        </Box>
+                                        <Numbers>
                                             0{i+1}
-                                        </Typography>
+                                        </Numbers>
                                         <Content>
                                             <Image src={item.image} alt={'image'}/>
                                             {/*<ProductImage src={item.image} alt={'img'}/>*/}
                                             <ProductTitle>
-                                                <Typography component={'h4'}>
+                                                <Typography component={'h3'} variant="h3"
+                                                sx={{
+                                                    margin:' 0 0 40px 0',
+                                                    // color:palette.mainTextColor,
+                                                }}
+                                                >
                                                     {item.name}
                                                 </Typography>
-                                                <Typography component={'p'}>
+                                                <Typography component={'p'} variant={'h5'}>
                                                     {item.description}
                                                 </Typography>
 

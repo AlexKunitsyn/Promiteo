@@ -12,6 +12,7 @@ import ContactForm from '@components/ContactForm';
 import Preloader from '@components/Preloader';
 import FirstScreenBlock from '@components/FirstScreenBlock';
 import HowItWorks from '@components/HowItWorks';
+import CuratedSelection from '@components/CuratedSelection';
 import { useAppSelector } from '@redux/hooks';
 
 import palette from '../styles/palette';
@@ -40,16 +41,16 @@ const Home = () => {
         <MainContainer>
             {/*<Preloader/>*/}
             <FirstScreenBlock fistImage ={firstScreenImg} showLogo={true} text={'Ignite the Night'}/>
-            <BrandPhilosophy/>
+            <HowItWorks/>
             <ProductBlock/>
-
+            <BrandPhilosophy/>
+            <CuratedSelection/>
             {/*<ProductsList/>*/}
-            <BrandSlider/>
+            {/*<BrandSlider/>*/}
             <ForCustomerBlock/>
             {/*<WhoNeedThis/>*/}
-            <HowItWorks/>
 
-            <ReviewsSlider/>
+            {/*<ReviewsSlider/>*/}
             <ContactForm/>
 
 

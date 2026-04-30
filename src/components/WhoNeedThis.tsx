@@ -5,10 +5,10 @@ import Container from '@mui/material/Container';
 
 import palette from '../styles/palette';
 
-import item1 from '../images/1item.jpeg';
-import item2 from '../images/2item.jpeg';
-import item3 from '../images/3item.jpeg';
-import item4 from '../images/4item.jpeg';
+// import item1 from '../images/1item.jpeg';
+// import item2 from '../images/2item.jpeg';
+// import item3 from '../images/3item.jpeg';
+// import item4 from '../images/4item.jpeg';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpg';
 import img3 from '../images/img3.jpg';
